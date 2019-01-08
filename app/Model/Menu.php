@@ -4,14 +4,14 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class Menu extends Model
 {
-  protected $table = 'roles';
+  protected $table = 'menus';
 
 protected $fillable = [
   'id',
   'name',
-  'level',
-  'description',
+  'modules_id',
+  'url',
 ];
 }

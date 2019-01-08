@@ -12,12 +12,13 @@ class Users extends Authenticatable
   use AuthenticatableTrait;
 use Notifiable;
 
-protected $table = 'db_rental';
+protected $table = 'users';
 
 protected $fillable = [
 'id',
 'name',
 'email',
+'roles_id',
 'email_verified_at',
 'password',
 ];

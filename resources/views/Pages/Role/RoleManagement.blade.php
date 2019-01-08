@@ -1,4 +1,4 @@
-<!-- @extends('layouts.admin_view') -->
+<!-- @extnds('layouts.admin_view') -->
 @section('content')
         <div class="breadcrumbs">
             <div class="col-sm-4">
