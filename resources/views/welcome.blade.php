@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    E-Rental Mobil Di Wilayah Indramayu
                 </div>
 
                 <div class="links">
