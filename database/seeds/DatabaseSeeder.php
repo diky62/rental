@@ -14,21 +14,5 @@ class DatabaseSeeder extends Seeder
       $this->call([
           UsersSeeder::class,
       ]);
-
-      $this->call([
-          RolesSeeder::class,
-      ]);
-
-      $this->call([
-          ModulesSeeder::class,
-      ]);
-
-      $this->call([
-          MenusSeeder::class,
-      ]);
-
-      $this->call([
-          AccesSeeder::class,
-      ]);
     }
 }
