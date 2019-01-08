@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('home1','SystemController@index')->name('home1');
+Route::get('home1','home1Controller@index')->name('home1');
 
 Route::group(['namespace' => 'Auth'], function () {
 		Route::get('login', 'LoginController@showLogin')->name('showlogin');
@@ -26,11 +26,4 @@ Route::group(['namespace' => 'Auth'], function () {
 		Route::get('logout', 'LoginController@logout')->name('logout');
 	});
 
-Route::group(['namespace' => 'Crud'], function () {
-
-        //ROLE MANAGEMENT
-    Route::get('role', 'RoleController@index')->name('role.tampilData');
-		Route::get('role/new', 'RoleController@create')->name('role.tambahdata');
-
-	});
 ;
