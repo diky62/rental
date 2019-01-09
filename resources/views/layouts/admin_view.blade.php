@@ -3,7 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<<<<<<< HEAD
+  <title>Admin | Dashboard</title>
+=======
   <title>Rentals</title>
+>>>>>>> d12c50961bbb23a7e8cc7f29ad2328a3d74b4521
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -259,16 +263,23 @@
             </ul>
           </li> --}}
           <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/admin.png" class="user-image" alt="User Image">
-              <span class="hidden-xs">Administrator</span>
-            </a>
-            <ul class="dropdown-menu">
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
+          <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
@@ -286,7 +297,15 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
+<<<<<<< HEAD
+          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Administrator</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+=======
           <img src="dist/img/rent_car.png" width="200" height="150">
+>>>>>>> d12c50961bbb23a7e8cc7f29ad2328a3d74b4521
         </div>
       </div>
       <!-- search form -->

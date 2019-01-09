@@ -13,9 +13,15 @@ class UsersSeeder extends Seeder
     {
       DB::table('users')->insert([
           'name' => 'Administrator',
+          'nik' => '1234567',
+          'provinsi_id' => '1298765',
+          'kabupaten_id' => '1298553',
+          'kecamatan_id' => '1298554',
+          'alamat' => 'Bandung',
           'email' => 'admin@proyek.com',
           'roles_id' => '1',
-          'password' => bcrypt('admin')
+          'password' => bcrypt('admin'),
+          'status' => 'mahasiswa'
       ]);
     }
 }
