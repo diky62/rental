@@ -1,4 +1,4 @@
-@extends('layouts.admin_view')	
+@extends('layouts.admin_view')
 @section('content')
-<H1>Tesst</H1>
+<H1></H1>
 @endsection

@@ -320,8 +320,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i>Role Management</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i>User Management</a></li>
+            <li><a href="{{route('role.index')}}"><i class="fa fa-circle-o"></i>Role Management</a></li>
+            <li><a href="{{route('user.data')}}"><i class="fa fa-circle-o"></i>User Management</a></li>
           </ul>
         </li>
 
@@ -334,7 +334,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i>Data Mobil</a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i>Data Mobil</a></li>
           </ul>
         </li>
 
@@ -346,10 +346,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i>Data Rental</a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i>Data Rental</a></li>
           </ul>
         </li>
-        
+
     </section>
     <!-- /.sidebar -->
   </aside>
