@@ -15,7 +15,7 @@ class CreateRentalTable extends Migration
     {
         Schema::create('rental', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('users_id');
             $table->integer('mobil_id');
             $table->string('status');
             $table->timestamps();

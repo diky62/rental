@@ -3,11 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<<<<<<< HEAD
-  <title>Admin | Dashboard</title>
-=======
   <title>Rentals</title>
->>>>>>> d12c50961bbb23a7e8cc7f29ad2328a3d74b4521
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -297,15 +293,12 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-<<<<<<< HEAD
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Administrator</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-=======
           <img src="dist/img/rent_car.png" width="200" height="150">
->>>>>>> d12c50961bbb23a7e8cc7f29ad2328a3d74b4521
         </div>
       </div>
       <!-- search form -->
@@ -353,7 +346,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i>Data Mobil</a></li>
+            <li><a href="{{ route('mobil.index') }}"><i class="fa fa-circle-o"></i>Data Mobil</a></li>
           </ul>
         </li>
 
@@ -365,7 +358,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i>Data Rental</a></li>
+            <li><a href="{{ route('rental.index')}}"><i class="fa fa-circle-o"></i>Data Rental</a></li>
           </ul>
         </li>
 

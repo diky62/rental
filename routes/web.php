@@ -45,5 +45,12 @@ Route::group(['namespace' => 'Auth'], function () {
       Route::get('user/newUser', 'ControllerUser@newUser')->name('user.newUser');
       //Route::post('user/tambahuser', 'ControllerUser@createUser')->name('user.tambah');
 
+      //MOBIL
+      Route::get('mobil', 'MobilController@index')->name('mobil.index');
+  		Route::get('mobil/new', 'MobilController@create')->name('mobil.tambahdata');
+
+      //RENTAL
+      Route::get('rental', 'RentalController@index')->name('rental.index');
+  		Route::get('rental/new', 'RentalController@create')->name('rental.tambahdata');
     });
 ;

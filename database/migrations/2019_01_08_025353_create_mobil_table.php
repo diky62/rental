@@ -20,7 +20,7 @@ class CreateMobilTable extends Migration
             $table->string('warna');
             $table->string('harga');
             $table->string('keterangan');
-            $table->integer('user_id');
+            $table->integer('users_id');
             $table->timestamps();
         });
     }
