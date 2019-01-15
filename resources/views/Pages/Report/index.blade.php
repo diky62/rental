@@ -13,7 +13,7 @@
               <div align="right">
                 <a href="{{ route('rental.tambahdata') }}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; Tambah</button></a>
                   </div><br>
-              <table id="example2" class="table table-bordered table-hover">
+              <table id="example1" class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>No</th>
@@ -27,16 +27,16 @@
                 <tr>
                   <td>1</td>
                   <td>
-                        <center><a href=""><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
+                        <center><a href=""><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
                         <form action="" method="post" style="display: inline-block">
-                        <button class="btn btn-outline-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
+                        <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
                         </form>
                       </td>
                   <td>User</td>
                   <td>1</td>
                   <td><form action="" method="post">
-                      <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-outline-danger btn-sm">False</i></button>
-                      <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-outline-success btn-sm">True</i></button>
+                      <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-danger btn-sm">False</i></button>
+                      <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-primary btn-sm">True</i></button>
                   </form>
                   </td>
                 </tr>
