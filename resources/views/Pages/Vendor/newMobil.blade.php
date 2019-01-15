@@ -1,4 +1,4 @@
-<!-- @extends('layouts.admin_view') -->
+@extends('layouts.admin_view')
 @section('content')
 <div class="col-md-12">
           <!-- Horizontal Form -->
@@ -51,11 +51,20 @@
                     <input type="text" class="form-control" id="inputPassword3" placeholder="ID User">
                   </div>
                 </div>
-                
+
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <button type="submit" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right">Sign in</button>
-              </div>
+                        <button type="submit" class="btn btn-primary btn-sm">
+                          <i class="fa fa-dot-circle-o"></i> Submit
+                        </button>
+                        <button type="reset" class="btn btn-success btn-sm">
+                          <i class="fa fa-ban"></i> Reset
+                        </button>
+                        <a href="">
+                        <button type="button" class="btn btn-danger btn-sm">
+                          <i class="fa fa-close"></i> Cancel
+                        </button></a>
+                        </form>
+                      </div>
 @endsection
