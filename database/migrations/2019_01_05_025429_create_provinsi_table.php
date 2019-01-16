@@ -16,8 +16,11 @@ class CreateProvinsiTable extends Migration
         Schema::create('provinsi', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->increments('id');
-            $table->string('nama_provinsi')->nullable();
+            $table->integer('users_id')->unsigned();
+            $table->string('nama_provinsi');
             $table->timestamps();
+
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

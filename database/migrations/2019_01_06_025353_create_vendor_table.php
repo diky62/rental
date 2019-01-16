@@ -19,7 +19,7 @@ class CreateVendorTable extends Migration
             $table->integer('users_id')->unsigned();
             $table->string('nama_rental');
             $table->string('alamat');
-            $table->integer('no_rekening');
+            $table->string('no_rekening');
             $table->string('nama_pemilik');
             $table->string('nama_bank');
             $table->string('no_hp');

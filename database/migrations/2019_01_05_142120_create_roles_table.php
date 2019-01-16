@@ -15,9 +15,12 @@ class CreateRolesTable extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('level');
+            $table->integer('users_id')->unsigned();
+            $table->string('username');
+            $table->integer('level');
             $table->timestamps();
+
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

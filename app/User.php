@@ -15,7 +15,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    
+
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -28,16 +28,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-     public function pronvisi(){
-        return $this->hasOne("App\Provinsi");
+
+    public function provinsi(){
+        return $this->hasMany("App\Provinsi");
     }
-    public function kabupaten(){
-        return $this->hasOne("App\Kabupaten");
+    public function roles(){
+        return $this->hasMany("App\Roles");
     }
-    public function kecamatan(){
-        return $this->hasOne("App\Kecamatan");
+    public function vendor(){
+        return $this->hasMany("App\Vendor");
     }
-    public function role(){
-        return $this->hasOne("App\Role");
+    public function rental(){
+        return $this->hasMany("App\Rental");
     }
 }

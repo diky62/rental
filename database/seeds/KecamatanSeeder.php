@@ -13,8 +13,8 @@ class KecamatanSeeder extends Seeder
     public function run()
     {
         DB::table('kecamatan')->insert([
-            'kabupaten_id' => 1,
-            'nama_kecamatan' => 'Juntinyuat'
+            'kabupaten_id'=>1,
+            'nama_kecamatan'=>'Juntinyuat'
         ]);
     }
 }

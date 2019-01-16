@@ -10,11 +10,13 @@ class Mobil extends Model
 
   protected $fillable = [
   'id',
-  'no_mobil',
+  'vendor_id',
   'no_polisi',
+  'no_mobil',
   'warna',
+  'transmisi',
+  'jumlah_penumpang',
   'harga',
   'keterangan',
-  'users_id'
   ];
 }
