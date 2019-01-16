@@ -351,14 +351,15 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-book"></i>
-            <span>Data Vendor</span>
+            <i class="fa fa-tasks"></i>
+            <span>Master Data</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('mobil.index') }}"><i class="fa fa-circle-o"></i>Data Mobil</a></li>
+            <li><a href="{{ route('vendor.index') }}"><i class="fa fa-circle-o"></i>Data Vendor</a></li>
           </ul>
         </li>
 

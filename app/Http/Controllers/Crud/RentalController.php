@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Crud;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\Rental;
+use App\Rental;
 
 class RentalController extends Controller
 {
