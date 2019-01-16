@@ -30,20 +30,18 @@
                 <tr>
                   <td>1</td>
                   <td>
-                    <td>
-                          <center><a href=""><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
-                          <form action="" method="post" style="display: inline-block">
-                          <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
-                          </form>
-                        </td>
-                  <td>1234567</td>
-                  <td>123456789098765</td>
-                  <td>Ungu</td>
-                  <td>200000</td>
-                  <td>mobil ini blablabla</td>
-                  <td>User</td>
+                        <center><a href=""><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
+                        <form action="" method="post" style="display: inline-block">
+                        <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
+                        </form>
+                      </td>
+                      <td>1234567</td>
+                      <td>123456789098765</td>
+                      <td>Ungu</td>
+                      <td>200000</td>
+                      <td>mobil ini blablabla</td>
+                      <td>User</td>
                 </tr>
-
                 </tfoot>
               </table>
             </div>

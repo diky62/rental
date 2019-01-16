@@ -10,46 +10,29 @@
             <!-- form start -->
             <form class="form-horizontal">
               <div class="box-body">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">No Mobil</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="No Mobil">
-                  </div>
+                <div class="row form-group">
+                  <div class="col col-md-2"><label for="text-input" class="form-control-label">No Mobil</label></div>
+                    <div class="col-12 col-md-10"><input type="text" id="name" name="name" placeholder="No Mobil" class="form-control"></div>
                 </div>
-
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">No Polisi</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="No Polisi">
-                  </div>
+                <div class="row form-group">
+                  <div class="col col-md-2"><label for="text-input" class="form-control-label">No Polisi</label></div>
+                    <div class="col-12 col-md-10"><input type="text" id="name" name="name" placeholder="No Polisi" class="form-control"></div>
                 </div>
-
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Warna</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Warna">
-                  </div>
+                <div class="row form-group">
+                  <div class="col col-md-2"><label for="text-input" class="form-control-label">Warna</label></div>
+                    <div class="col-12 col-md-10"><input type="text" id="name" name="name" placeholder="Warna" class="form-control"></div>
                 </div>
-
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Harga</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Harga">
-                  </div>
+                <div class="row form-group">
+                  <div class="col col-md-2"><label for="text-input" class="form-control-label">Harga</label></div>
+                    <div class="col-12 col-md-10"><input type="text" id="name" name="name" placeholder="Harga" class="form-control"></div>
                 </div>
-
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Keterangan</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Keterangan">
-                  </div>
+                <div class="row form-group">
+                  <div class="col col-md-2"><label for="text-input" class="form-control-label">Keterangan</label></div>
+                    <div class="col-12 col-md-10"><input type="text" id="name" name="name" placeholder="Keterangan" class="form-control"></div>
                 </div>
-
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">ID User</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="ID User">
-                  </div>
+                <div class="row form-group">
+                  <div class="col col-md-2"><label for="text-input" class="form-control-label">ID User</label></div>
+                    <div class="col-12 col-md-10"><input type="text" id="name" name="name" placeholder="ID User" class="form-control"></div>
                 </div>
 
               </div>
