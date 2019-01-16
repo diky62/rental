@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRentalTable extends Migration
+class CreateVendorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,19 @@ class CreateRentalTable extends Migration
      */
     public function up()
     {
-        Schema::create('rental', function (Blueprint $table) {
+        Schema::create('vendor', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->increments('id');
             $table->integer('users_id')->unsigned();
-            $table->integer('mobil_id')->unsigned();
-            $table->string('tanggal_rental');
-            $table->string('tanggal_kembali');
-            $table->integer('harga_sewa');
-            $table->string('status')->default(0);
+            $table->string('nama_rental');
+            $table->string('alamat');
+            $table->integer('no_rekening');
+            $table->string('nama_pemilik');
+            $table->string('nama_bank');
+            $table->string('no_hp');
             $table->timestamps();
 
             $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('mobil_id')->references('id')->on('mobil')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -36,6 +36,6 @@ class CreateRentalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rental');
+        Schema::dropIfExists('vendor');
     }
 }

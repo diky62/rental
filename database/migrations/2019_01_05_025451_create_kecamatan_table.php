@@ -14,8 +14,13 @@ class CreateKecamatanTable extends Migration
     public function up()
     {
         Schema::create('kecamatan', function (Blueprint $table) {
+            $table->engine = "InnoDB";
             $table->increments('id');
+            $table->integer('kabupaten_id')->unsigned();
+            $table->string('nama_kecamatan')->nullable();
             $table->timestamps();
+
+            $table->foreign('kabupaten_id')->references('id')->on('kabupaten')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

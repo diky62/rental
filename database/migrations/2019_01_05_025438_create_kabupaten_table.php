@@ -14,10 +14,13 @@ class CreateKabupatenTable extends Migration
     public function up()
     {
         Schema::create('kabupaten', function (Blueprint $table) {
+            $table->engine = "InnoDB";
             $table->increments('id');
-            $table->integer('provinsi_id');
-            $table->string('nama');
+            $table->integer('provinsi_id')->unsigned();
+            $table->string('nama_kabupaten')->nullable();
             $table->timestamps();
+
+            $table->foreign('provinsi_id')->references('id')->on('provinsi')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User;
 
 class UsersSeeder extends Seeder
 {
@@ -13,15 +14,15 @@ class UsersSeeder extends Seeder
     {
       DB::table('users')->insert([
           'name' => 'Administrator',
-          'nik' => '1234567',
-          'provinsi_id' => '1298765',
-          'kabupaten_id' => '1298553',
-          'kecamatan_id' => '1298554',
+          'nik' => 1234567,
+          'provinsi_id' => 1,
+          'kabupaten_id' => 1,
+          'kecamatan_id' => 1,
           'alamat' => 'Bandung',
           'email' => 'admin@proyek.com',
-          'roles_id' => '1',
+          'role_id' => 1,
           'password' => bcrypt('admin'),
-          'status' => 'mahasiswa'
+          'no_hp' => '083148302377'
       ]);
     }
 }

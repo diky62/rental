@@ -14,14 +14,19 @@ class CreateMobilTable extends Migration
     public function up()
     {
         Schema::create('mobil', function (Blueprint $table) {
+            $table->engine = "InnoDB";
             $table->increments('id');
-            $table->string('no_mobil');
+            $table->integer('vendor_id')->unsigned();
+            $table->string('nama_mobil');
             $table->string('no_polisi');
             $table->string('warna');
-            $table->string('harga');
+            $table->string('transmisi');
+            $table->integer('jumlah_penumpang');
+            $table->integer('harga');
             $table->string('keterangan');
-            $table->integer('user_id');
             $table->timestamps();
+
+            $table->foreign('vendor_id')->references('id')->on('vendor')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
