@@ -4,21 +4,21 @@ namespace App\Http\Controllers\Crud;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\Users;
+use App\User;
 
 class ControllerUser extends Controller
 {
     public function data()
     {
     	$page = 'Pages.User.table_user';
-      $user = Users::all();
+      $user = User::all();
       return view($page)->with(compact('user'));
     }
 
     public function newUser()
       {
           $page = 'Pages.User.tambah_user';
-          $user = Users::all();
+          $user = User::all();
           return view($page)->with(compact('user'));
     }
 

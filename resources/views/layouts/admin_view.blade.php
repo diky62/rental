@@ -312,11 +312,6 @@
         <div class="pull-left image">
           <img src="dist/img/rent_car.png" >
         </div>
-        <div class="pull-left info">
-          <!-- <p>Administrator</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
-          <img src="dist/img/rent_car.png" width="200" height="150">
-        </div>
       </div>
       <!-- search form -->
       <form action="#" method="get" class="sidebar-form">
@@ -356,14 +351,15 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-book"></i>
-            <span>Data Vendor</span>
+            <i class="fa fa-tasks"></i>
+            <span>Master Data</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('mobil.index') }}"><i class="fa fa-circle-o"></i>Data Mobil</a></li>
+            <li><a href="{{ route('vendor.index') }}"><i class="fa fa-circle-o"></i>Data Vendor</a></li>
           </ul>
         </li>
 
@@ -639,7 +635,6 @@
 <!-- DataTables -->
 <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
-<!-- page script -->
 <script>
   $(function () {
     $('#example1').DataTable()
@@ -653,6 +648,17 @@
     })
   })
 </script>
+<style>
+			.tengah{
+				text-align:center;
+			}
+			.kiri{
+				text-align:left;
+			}
+			.kanan{
+				text-align:right;
+			}
+		</style>
 
 
 <!-- jQuery 3 -->

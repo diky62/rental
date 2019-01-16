@@ -28,6 +28,7 @@
                   <div align="right">
                     <a href="{{route('user.newUser')}}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; Tambah</button></a>
                       </div><br>
+                      <div class="table-responsive">
                   <table id="example1" class="table table-bordered table-hover">
                     <thead>
                     <tr>
@@ -67,6 +68,7 @@
                     </tfoot>
                   </table>
                 </div>
+              </div>
                 <!-- /.box-body -->
               </div>
               <!-- /.box -->

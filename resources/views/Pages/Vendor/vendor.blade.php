@@ -6,24 +6,25 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data Mobil</h3>
+              <h3 class="box-title">Data Vendor</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <div align="right">
-                <a href="{{ route('mobil.tambahdata') }}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; Tambah</button></a>
+                <a href="{{ route('vendor.tambahdata') }}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; Tambah</button></a>
                   </div><br>
               <table id="example1" class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>No</th>
                   <th>Aksi</th>
-                  <th>No Mobil</th>
-                  <th>No Polisi</th>
-                  <th>Warna</th>
-                  <th>Harga</th>
-                  <th>Keterangan</th>
                   <th>ID User</th>
+                  <th>Nama Rental</th>
+                  <th>Alamat</th>
+                  <th>No Rekening</th>
+                  <th>Nama Pemilik</th>
+                  <th>Nama Bank</th>
+                  <th>No HP</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,12 +36,13 @@
                         <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
                         </form>
                       </td>
-                      <td>1234567</td>
-                      <td>123456789098765</td>
-                      <td>Ungu</td>
-                      <td>200000</td>
-                      <td>mobil ini blablabla</td>
-                      <td>User</td>
+                      <td>2</td>
+                      <td>Yolanda Rental</td>
+                      <td>Indramayu</td>
+                      <td>12345678909876</td>
+                      <td>Yolanda</td>
+                      <td>BRI</td>
+                      <td>089878787987</td>
                 </tr>
                 </tfoot>
               </table>

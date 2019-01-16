@@ -1,12 +1,14 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User;
+use App\Provinsi;
 use App\Kabupaten;
 use App\Kecamatan;
-use App\Mobil;
-use App\Provinsi;
-use App\Rental;
+use App\Roles;
 use App\Vendor;
+use App\Mobil;
+use App\Rental;
 
 class DatabaseSeeder extends Seeder
 {
@@ -39,7 +41,10 @@ class DatabaseSeeder extends Seeder
           MobilSeeder::class,
       ]);
       $this->call([
-          RentalSeeder::class,
+          VendorSeeder::class,
+      ]);
+      $this->call([
+          MobilSeeder::class,
       ]);
     }
 }

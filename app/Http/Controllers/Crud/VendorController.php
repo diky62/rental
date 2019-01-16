@@ -4,21 +4,21 @@ namespace App\Http\Controllers\Crud;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Mobil;
+use App\Vendor;
 
-class MobilController extends Controller
+class VendorController extends Controller
 {
     public function index()
     {
-    	$page = 'Pages.Vendor.index';
-      $data = Mobil::all();
+    	$page = 'Pages.Vendor.vendor';
+      $data = Vendor::all();
       return view($page)->with(compact('data'));
     }
 
     public function create()
     {
-      $page = 'Pages.Vendor.newMobil';
-      $data = Mobil::all();
+      $page = 'Pages.Vendor.newVendor';
+      $data = Vendor::all();
       return view($page)->with(compact('data'));
     }
 

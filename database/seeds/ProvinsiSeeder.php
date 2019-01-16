@@ -13,7 +13,7 @@ class ProvinsiSeeder extends Seeder
     public function run()
     {
         DB::table('provinsi')->insert([
-        	'nama_provinsi' => 'Jawa Barat'
+        	'nama_provinsi'=>'Jawa Barat'
         ]);
     }
 }

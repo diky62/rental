@@ -10,7 +10,8 @@ class Roles extends Model
 
   protected $fillable = [
   'id',
-  'name',
+  'users_id',
+  'username',
   'level',
   ];
 }

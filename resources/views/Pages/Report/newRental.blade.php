@@ -10,25 +10,17 @@
             <!-- form start -->
             <form class="form-horizontal">
               <div class="box-body">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">ID User</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="ID User">
-                  </div>
+                <div class="row form-group">
+                  <div class="col col-md-2"><label for="text-input" class="form-control-label">ID User</label></div>
+                    <div class="col-12 col-md-10"><input type="text" id="name" name="name" placeholder="ID User" class="form-control"></div>
                 </div>
-
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">ID Mobil</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="ID Mobil">
-                  </div>
+                <div class="row form-group">
+                  <div class="col col-md-2"><label for="text-input" class="form-control-label">ID Mobil</label></div>
+                    <div class="col-12 col-md-10"><input type="text" id="name" name="name" placeholder="ID Mobil" class="form-control"></div>
                 </div>
-
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Status</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Status">
-                  </div>
+                <div class="row form-group">
+                  <div class="col col-md-2"><label for="text-input" class="form-control-label">Status</label></div>
+                    <div class="col-12 col-md-10"><input type="text" id="name" name="name" placeholder="Status" class="form-control"></div>
                 </div>
 
               </div>

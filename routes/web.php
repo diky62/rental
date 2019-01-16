@@ -52,5 +52,9 @@ Route::group(['namespace' => 'Auth'], function () {
       //RENTAL
       Route::get('rental', 'RentalController@index')->name('rental.index');
   		Route::get('rental/new', 'RentalController@create')->name('rental.tambahdata');
+
+      //VENDOR
+      Route::get('vendor', 'VendorController@index')->name('vendor.index');
+      Route::get('vendor/new', 'VendorController@create')->name('vendor.tambahdata');
     });
 ;

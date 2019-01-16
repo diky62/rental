@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Crud;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\model\Roles;
+use App\Roles;
 
 class RoleManagementController extends Controller
 {

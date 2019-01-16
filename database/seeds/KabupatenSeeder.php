@@ -13,8 +13,8 @@ class KabupatenSeeder extends Seeder
     public function run()
     {
         DB::table('kabupaten')->insert([
-            'provinsi_id' => 1,
-            'nama_kabupaten' => 'Indramayu'
+            'provinsi_id'=>1,
+            'nama_kabupaten'=>'Indramayu'
         ]);
     }
 }
