@@ -30,7 +30,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
      public function roles(){
-        return $this->hasOne("App\Role");
+        return $this->hasOne("App\Roles");
     }
+     public function provinsi(){
+        return $this->hasMany("App\Provinsi");
     }
 }
