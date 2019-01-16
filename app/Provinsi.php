@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Provinsi extends Model
 {
-    protected $table = "role";
+    protected $table = "provinsi";
     protected $guarded = ["id"];
 }
