@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->integer('kecamatan_id')->unsigned();
             $table->string('alamat');
             $table->string('email')->unique();
-            $table->integer('role_id')->unsigned();
+            $table->integer('roles_id')->unsigned();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('no_hp');
@@ -33,7 +33,7 @@ class CreateUsersTable extends Migration
             $table->foreign('provinsi_id')->references('id')->on('provinsi')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('kabupaten_id')->references('id')->on('kabupaten')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('kecamatan_id')->references('id')->on('kecamatan')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('role_id')->references('id')->on('role')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('roles_id')->references('id')->on('roles')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

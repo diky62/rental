@@ -4,23 +4,30 @@
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Data Role</h3>
+              <h3 class="box-title">Data Rental</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
             <form class="form-horizontal">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Nama</label>
+                  <label for="inputEmail3" class="col-sm-2 control-label">ID User</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Nama">
+                    <input type="text" class="form-control" id="inputEmail3" placeholder="ID User">
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Level</label>
+                  <label for="inputPassword3" class="col-sm-2 control-label">ID Mobil</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Level">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="ID Mobil">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">Status</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="Status">
                   </div>
                 </div>
 

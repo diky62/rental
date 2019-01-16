@@ -21,7 +21,7 @@ class CreateRentalTable extends Migration
             $table->string('tanggal_rental');
             $table->string('tanggal_kembali');
             $table->integer('harga_sewa');
-            $table->string('status')->default(0);
+            $table->string('status');
             $table->timestamps();
 
             $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

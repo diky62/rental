@@ -18,9 +18,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
       $this->call([
-          UsersSeeder::class,
-      ]);
-      $this->call([
           ProvinsiSeeder::class,
       ]);
       $this->call([
@@ -30,16 +27,19 @@ class DatabaseSeeder extends Seeder
           KecamatanSeeder::class,
       ]);
       $this->call([
+          RoleSeeder::class,
+      ]);
+      $this->call([
+          UsersSeeder::class,
+      ]);
+      $this->call([
+          VendorSeeder::class,
+      ]);
+      $this->call([
           MobilSeeder::class,
       ]);
       $this->call([
           RentalSeeder::class,
-      ]);
-      $this->call([
-          RoleSeeder::class,
-      ]);
-      $this->call([
-          VendorSeeder::class,
       ]);
     }
 }

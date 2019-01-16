@@ -26,4 +26,31 @@ Route::group(['namespace' => 'Auth'], function () {
 		Route::get('logout', 'LoginController@logout')->name('logout');
 	});
 
+  Route::group(['namespace' => 'Crud'], function () {
+
+      //ROLE MANAGEMENT
+      Route::get('role', 'RoleManagementController@index')->name('role.index');
+  		Route::get('role/new', 'RoleManagementController@create')->name('role.tambahdata');
+  		//Route::post('role/new', 'RoleManagementController@save')->name('role.save');
+      //Route::get('role/update/{id}', 'RoleManagementController@edit')->name('role.edit');
+      //Route::post('role/update/{id}', 'RoleManagementController@UpdateRole')->name('role.update');
+      //Route::delete('role/{id}', 'RoleManagementController@destroy')->name('role.delete');
+
+
+      //USER WEB MANAGEMENT
+      Route::get('user', 'ControllerUser@data')->name('user.data');
+      //Route::get('user/edituser/{id}', 'ControllerUser@edit')->name('user.edit');
+      //Route::post('user/edituser/{id}', 'ControllerUser@update')->name('user.update');
+      //Route::post('user/hapususer/{id}', 'ControllerUser@destroy')->name('user.delete');
+      Route::get('user/newUser', 'ControllerUser@newUser')->name('user.newUser');
+      //Route::post('user/tambahuser', 'ControllerUser@createUser')->name('user.tambah');
+
+      //MOBIL
+      Route::get('mobil', 'MobilController@index')->name('mobil.index');
+  		Route::get('mobil/new', 'MobilController@create')->name('mobil.tambahdata');
+
+      //RENTAL
+      Route::get('rental', 'RentalController@index')->name('rental.index');
+  		Route::get('rental/new', 'RentalController@create')->name('rental.tambahdata');
+    });
 ;

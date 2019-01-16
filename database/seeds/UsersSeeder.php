@@ -20,7 +20,7 @@ class UsersSeeder extends Seeder
           'kecamatan_id' => 1,
           'alamat' => 'Bandung',
           'email' => 'admin@proyek.com',
-          'role_id' => 1,
+          'roles_id' => 1,
           'password' => bcrypt('admin'),
           'no_hp' => '083148302377'
       ]);
