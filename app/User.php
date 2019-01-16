@@ -29,10 +29,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-     public function roles(){
+    public function roles(){
         return $this->hasOne("App\Roles");
     }
-     public function provinsi(){
-        return $this->hasMany("App\Provinsi");
+    public function provinsi(){
+        return $this->hasOne("App\Provinsi");
     }
 }
