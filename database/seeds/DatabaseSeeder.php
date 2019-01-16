@@ -41,10 +41,7 @@ class DatabaseSeeder extends Seeder
           MobilSeeder::class,
       ]);
       $this->call([
-          VendorSeeder::class,
-      ]);
-      $this->call([
-          MobilSeeder::class,
+          RentalSeeder::class,
       ]);
     }
 }
