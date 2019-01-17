@@ -19,6 +19,18 @@
                     <div class="col-12 col-md-10"><input type="text" id="name" name="name" placeholder="ID Mobil" class="form-control"></div>
                 </div>
                 <div class="row form-group">
+                  <div class="col col-md-2"><label for="text-input" class="form-control-label">Tanggal Rental</label></div>
+                    <div class="col-12 col-md-10"><input type="text" id="name" name="name" placeholder="Tanggal Rental" class="form-control"></div>
+                </div>
+                <div class="row form-group">
+                  <div class="col col-md-2"><label for="text-input" class="form-control-label">Tanggal Kembali</label></div>
+                    <div class="col-12 col-md-10"><input type="text" id="name" name="name" placeholder="ID Mobil" class="form-control"></div>
+                </div>
+                <div class="row form-group">
+                  <div class="col col-md-2"><label for="text-input" class="form-control-label">Harga Sewa</label></div>
+                    <div class="col-12 col-md-10"><input type="text" id="name" name="name" placeholder="Harga Sewa" class="form-control"></div>
+                </div>
+                <div class="row form-group">
                   <div class="col col-md-2"><label for="text-input" class="form-control-label">Status</label></div>
                     <div class="col-12 col-md-10"><input type="text" id="name" name="name" placeholder="Status" class="form-control"></div>
                 </div>

@@ -18,12 +18,14 @@
                 <tr>
                   <th>No</th>
                   <th>Aksi</th>
-                  <th>No Mobil</th>
+                  <th>ID Vendor</th>
+                  <th>Nama Mobil</th>
                   <th>No Polisi</th>
                   <th>Warna</th>
+                  <th>Transmisi</th>
+                  <th>Jumlah Penumpang</th>
                   <th>Harga</th>
                   <th>Keterangan</th>
-                  <th>ID User</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,12 +37,14 @@
                         <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
                         </form>
                       </td>
-                      <td>1234567</td>
+                      <td>1</td>
+                      <td>Avanza</td>
                       <td>123456789098765</td>
                       <td>Ungu</td>
-                      <td>200000</td>
-                      <td>mobil ini blablabla</td>
-                      <td>User</td>
+                      <td>blablabla</th>
+                      <td>5</td>
+                      <td>700000</td>
+                      <td>mobil ini blablabal</td>
                 </tr>
                 </tfoot>
               </table>

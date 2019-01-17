@@ -36,13 +36,9 @@
                       <th>Aksi</th>
                       <th>Nama</th>
                       <th>NIK</th>
-                      <th>Provinsi</th>
-                      <th>Kabupaten</th>
-                      <th>Kecamatan</th>
                       <th>Alamat</th>
                       <th>Email</th>
-                      <th>Role</th>
-                      <th>No Hp</th>
+                      <th>No HP</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -56,12 +52,8 @@
                           </td>
                       <td>Lufianti</td>
                       <td>1234567890987654</td>
-                      <td>Jawa Barat</td>
-                      <td>Cirebon</td>
-                      <td>Tengah Tani</td>
                       <td>Desa Kalitengah</th>
                       <td>Lufianti08@gmail.com</td>
-                      <td>User</td>
                       <td>089654283916</td>
                     </tr>
 

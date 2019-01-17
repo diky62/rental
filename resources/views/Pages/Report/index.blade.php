@@ -20,6 +20,9 @@
                   <th>Aksi</th>
                   <th>ID User</th>
                   <th>ID Mobil</th>
+                  <th>Tanggal Rental</th>
+                  <th>Tanggal Kembali</th>
+                  <th>Harga Sewa</th>
                   <th>Status</th>
                 </tr>
                 </thead>
@@ -34,6 +37,9 @@
                       </td>
                   <td>User</td>
                   <td>1</td>
+                  <td></td>
+                  <td></td>
+                  <td>2000000</td>
                   <td><form action="" method="post">
                       <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-danger btn-sm">False</i></button>
                       <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-primary btn-sm">True</i></button>
