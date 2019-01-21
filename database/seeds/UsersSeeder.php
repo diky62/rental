@@ -15,9 +15,9 @@ class UsersSeeder extends Seeder
       DB::table('users')->insert([
           'name' => 'Administrator',
           'nik' => 1234567,
-          'provinsi_id' => 1,
-          'kabupaten_id' => 1,
-          'kecamatan_id' => 1,
+          'provinsi_id' => 32,
+          'kabupaten_id' => 3212,
+          'kecamatan_id' => 3212170,
           'alamat' => 'Bandung',
           'email' => 'admin@proyek.com',
           'roles_id' => 1,

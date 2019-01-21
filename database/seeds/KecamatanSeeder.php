@@ -12,9 +12,17 @@ class KecamatanSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('kecamatan')->insert([
-            'kabupaten_id'=>1,
-            'nama_kecamatan'=>'Juntinyuat'
-        ]);
+      $file = fopen(database_path('csv/kecamatan.csv'), "r");
+      $data = array();
+      while (($row = fgetcsv($file, 0, ",")) !== FALSE) {
+        $data[] = $row;
+      }
+      foreach ($data as $d) {
+      $s = new Kecamatan();
+      $s->id = $d[0];
+      $s->kabupaten_id = $d[1];
+      $s->nama_kecamatan = $d[2];
+      $s->save();
     }
+  }
 }

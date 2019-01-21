@@ -12,8 +12,16 @@ class ProvinsiSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('provinsi')->insert([
-        	'nama_provinsi'=>'Jawa Barat'
-        ]);
+        $file = fopen(database_path('csv/provinsi.csv'), "r");
+        $data = array();
+        while (($row = fgetcsv($file, 0, ",")) !== FALSE) {
+          $data[] = $row;
+        }
+        foreach ($data as $d) {
+        $s = new Provinsi();
+        $s->id = $d[0];
+        $s->nama_provinsi = $d[1];
+        $s->save();
+        }
     }
 }

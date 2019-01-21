@@ -12,9 +12,17 @@ class KabupatenSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('kabupaten')->insert([
-            'provinsi_id'=>1,
-            'nama_kabupaten'=>'Indramayu'
-        ]);
+      $file = fopen(database_path('csv/kabupaten.csv'), "r");
+      $data = array();
+      while (($row = fgetcsv($file, 0, ",")) !== FALSE) {
+        $data[] = $row;
+      }
+      foreach ($data as $d) {
+      $s = new Kabupaten();
+      $s->id = $d[0];
+      $s->provinsi_id = $d[1];
+      $s->nama_kabupaten = $d[2];
+      $s->save();
     }
+  }
 }
