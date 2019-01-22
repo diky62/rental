@@ -5,21 +5,23 @@ namespace App\Http\Controllers\Crud;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Vendor;
+use App\User;
 
 class VendorController extends Controller
 {
     public function index()
     {
     	$page = 'Pages.Vendor.vendor';
-      $data = Vendor::all();
-      return view($page)->with(compact('data'));
+      $vendor = Vendor::all();
+      return view($page)->with(compact('vendor'));
     }
 
     public function create()
     {
       $page = 'Pages.Vendor.newVendor';
-      $data = Vendor::all();
-      return view($page)->with(compact('data'));
+      $vendor = Vendor::all();
+      $names = User::all();
+      return view($page)->with(compact('vendor', 'names'));
     }
 
    // public function edit($id)
@@ -57,18 +59,19 @@ class VendorController extends Controller
    //  }
    //
    //
-   //  public function createUser(Request $request)
-   //    {
-   //        $user = new Users();
-   //        $user->name = $request->input('name');
-   //        $user->role_id = $request->input('level');
-   //        $user->email = $request->input('email');
-   //        $user->fill([
-   //          'password' => bcrypt($request->password)
-   //        ]);
-   //        $user->save();
-   //        return redirect()->route('superadmin.user.data')->with('alert-success','Data berhasil ditambahkan!');
-   //        $user->reset();
-   //        return redirect()->route('superadmin.user.data');
-   //      }
+    public function createVendor(Request $request)
+      {
+          $vendor = new Vendor();
+          $vendor->users_id = $request->input('name');
+          $vendor->nama_rental = $request->input('nama_rental');
+          $vendor->alamat = $request->input('alamat');
+          $vendor->no_rekening = $request->input('no_rekening');
+          $vendor->nama_pemilik = $request->input('nama_pemilik');
+          $vendor->nama_bank = $request->input('nama_bank');
+          $vendor->no_hp = $request->input('no_hp');
+          $vendor->save();
+          return redirect()->route('vendor.index')->with('alert-success','Data berhasil ditambahkan!');
+          $vendor->reset();
+          return redirect()->route('vendor.index');
+        }
 }

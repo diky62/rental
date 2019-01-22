@@ -29,21 +29,25 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>
-                        <center><a href=""><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
-                        <form action="" method="post" style="display: inline-block">
-                        <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
-                        </form>
-                      </td>
-                      <td>2</td>
-                      <td>Yolanda Rental</td>
-                      <td>Indramayu</td>
-                      <td>12345678909876</td>
-                      <td>Yolanda</td>
-                      <td>BRI</td>
-                      <td>089878787987</td>
+                  @php $no = 1; @endphp
+                      @foreach($vendor as $vendors)
+                        <td>{{$no++}}</td>
+                        <td>
+                          <center><a href=""><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
+                          <form action="" method="post" style="display: inline-block">
+                               <!-- {{ csrf_field() }} -->
+                          <button class="btn btn-outline-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
+                          </form>
+                        </td>
+                        <td>{{$vendors->Users->name}}</td>
+                        <td>{{$vendors->nama_rental}}</td>
+                        <td>{{$vendors->alamat}}</td>
+                        <td>{{$vendors->no_rekening}}</td>
+                        <td>{{$vendors->nama_pemilik}}</td>
+                        <td>{{$vendors->nama_bank}}</td>
+                        <td>{{$vendors->no_hp}}</td>
                 </tr>
+                  @endforeach
                 </tfoot>
               </table>
             </div>

@@ -56,5 +56,6 @@ Route::group(['namespace' => 'Auth'], function () {
       //VENDOR
       Route::get('vendor', 'VendorController@index')->name('vendor.index');
       Route::get('vendor/new', 'VendorController@create')->name('vendor.tambahdata');
+      Route::post('vendor/newVendor', 'VendorController@createVendor')->name('vendor.tambahVendor');
     });
 ;
