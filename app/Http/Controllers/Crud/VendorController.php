@@ -24,41 +24,41 @@ class VendorController extends Controller
       return view($page)->with(compact('vendor', 'names'));
     }
 
-   // public function edit($id)
-   // {
-   //   // $user = Users::find($id);
-   //   $user = Users::findOrFail($id);
-   //   $modules = Module::with('Menus')->get();
-   //   return view('SuperAdmin.Pages.User.edit_user', compact('modules', 'user'));
-   // }
-   //
-   // public function update(Request $request, $id)
-   // {
-   //   $user = Users::findOrFail($id);
-   //   $user->name = $request->name;
-   //   $user->email = $request->email;
-   //   $isSuccess = $user->save();
-   //   if ($isSuccess) {
-   //     // return success
-   //     return redirect()->route('superadmin.user.data')->with('alert-success','Data berhasil diubah!');
-   //   }
-   //   else {
-   //     // returm failed
-   //     return redirect()->route('superadmin.user.data')->with('alert-failed','Data tidak berhasil diubah!');
-   //   }
-   //   $user->reset();
-   //   return redirect()->route('superadmin.user.edit');
-   //  }
-   //
-   //  public function destroy($id)
-   //  {
-   //     $user = Users::findOrFail($id);
-   //    // $user = Users::where('id', $id)->first();
-   //    $user->delete();
-   //    return redirect()->route('superadmin.user.data')->with('alert-success','Data berhasi dihapus!');
-   //  }
-   //
-   //
+   public function edit($id)
+   {
+     $vendor = Vendor::findOrFail($id);
+     return view('Pages.Vendor.edit_vendor', compact('vendor'));
+   }
+
+   public function update(Request $request, $id)
+   {
+     $vendor = Vendor::findOrFail($id);
+     $vendor->nama_rental = $request->nama_rental;
+     $vendor->alamat = $request->alamat;
+     $vendor->no_rekening = $request->no_rekening;
+     $vendor->nama_pemilik = $request->nama_pemilik;
+     $vendor->nama_bank = $request->nama_bank;
+     $vendor->no_hp = $request->no_hp;
+     $isSuccess = $vendor->save();
+     if ($isSuccess) {
+       // return success
+       return redirect()->route('vendor.index')->with('alert-success','Data berhasil diubah!');
+     }
+     else {
+       // returm failed
+       return redirect()->route('vendor.index')->with('alert-failed','Data tidak berhasil diubah!');
+     }
+     $vendor->reset();
+     return redirect()->route('vendor.edit');
+    }
+
+    public function destroy($id)
+    {
+      $vendor = Vendor::findOrFail($id);
+      $vendor->delete();
+      return redirect()->route('vendor.index')->with('alert-success','Data berhasi dihapus!');
+    }
+
     public function createVendor(Request $request)
       {
           $vendor = new Vendor();

@@ -18,7 +18,7 @@
                 <tr>
                   <th>No</th>
                   <th>Aksi</th>
-                  <th>ID User</th>
+                  <th>Nama</th>
                   <th>Nama Rental</th>
                   <th>Alamat</th>
                   <th>No Rekening</th>
@@ -33,12 +33,12 @@
                       @foreach($vendor as $vendors)
                         <td>{{$no++}}</td>
                         <td>
-                          <center><a href=""><button type="submit" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></button></a>
-                          <form action="" method="post" style="display: inline-block">
-                               <!-- {{ csrf_field() }} -->
-                          <button class="btn btn-outline-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
-                          </form>
-                        </td>
+                              <center><a href="{{route('vendor.edit', [$vendors]) }}"><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
+                              <form action="{{ route('vendor.delete', $vendors->id) }}" method="post" style="display: inline-block">
+                                {{ csrf_field() }}
+                              <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
+                              </form>
+                            </td>
                         <td>{{$vendors->Users->name}}</td>
                         <td>{{$vendors->nama_rental}}</td>
                         <td>{{$vendors->alamat}}</td>

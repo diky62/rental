@@ -4,52 +4,45 @@
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Tambah Data Mobil</h3>
+              <h3 class="box-title">Edit Data Mobil</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
             <!-- <form class="form-horizontal"> -->
               <div class="box-body">
-                <form action="{{route('mobil.tambahmobil')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                <form action="{{route('mobil.update', $data->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                         {{ csrf_field() }}
-                        <div class="row form-group">
-                                    <div class="col col-md-2"><label for="select" class=" form-control-label">Nama Rental</label></div>
-                                    <div class="col-12 col-md-10">
-                                      <select name="nama_rental" id="nama_rental" data-placeholder="Please select..." class="standardSelect" tabindex="1">
-                                        <option value=""></option>
-                                        @foreach($vendor as $vendors)
-                                        <option value="{{$vendors->id}}">{{$vendors->nama_rental}}</option>
-                                        @endforeach
-                                      </select>
-                                    </div>
-                                  </div>
+                <div class="row form-group">
+                  <div class="col col-md-2"><label for="text-input" class="form-control-label">Nama Rental</label></div>
+                    <div class="col-12 col-md-10"><input type="text" id="nama_rental" name="nama_rental" class="form-control" value="{{ $data->Vendor->nama_rental }}" disabled></div>
+                  </div>
                 <div class="row form-group">
                   <div class="col col-md-2"><label for="text-input" class="form-control-label">Nama Mobil</label></div>
-                    <div class="col-12 col-md-10"><input type="text" id="nama_mobil" name="nama_mobil" placeholder="Nama Mobil" class="form-control"></div>
+                    <div class="col-12 col-md-10"><input type="text" id="nama_mobil" name="nama_mobil" class="form-control" value="{{ $data->nama_mobil }}"></div>
                 </div>
                 <div class="row form-group">
                   <div class="col col-md-2"><label for="text-input" class="form-control-label">No Polisi</label></div>
-                    <div class="col-12 col-md-10"><input type="text" id="no_polisi" name="no_polisi" placeholder="No Polisi" class="form-control"></div>
+                    <div class="col-12 col-md-10"><input type="text" id="no_polisi" name="no_polisi" class="form-control" value="{{ $data->no_polisi }}"></div>
                 </div>
                 <div class="row form-group">
                   <div class="col col-md-2"><label for="text-input" class="form-control-label">Warna</label></div>
-                    <div class="col-12 col-md-10"><input type="text" id="warna" name="warna" placeholder="Warna" class="form-control"></div>
+                    <div class="col-12 col-md-10"><input type="text" id="warna" name="warna" class="form-control" value="{{ $data->warna }}"></div>
                 </div>
                 <div class="row form-group">
                   <div class="col col-md-2"><label for="text-input" class="form-control-label">Transmisi</label></div>
-                    <div class="col-12 col-md-10"><input type="text" id="transmisi" name="transmisi" placeholder="Transmisi" class="form-control"></div>
+                    <div class="col-12 col-md-10"><input type="text" id="transmisi" name="transmisi" class="form-control" value="{{ $data->transmisi }}"></div>
                 </div>
                 <div class="row form-group">
                   <div class="col col-md-2"><label for="text-input" class="form-control-label">Jumlah Penumpang</label></div>
-                    <div class="col-12 col-md-10"><input type="text" id="jumlah_penumpang" name="jumlah_penumpang" placeholder="Jumlah Penumpang" class="form-control"></div>
+                    <div class="col-12 col-md-10"><input type="text" id="jumlah_penumpang" name="jumlah_penumpang" class="form-control" value="{{ $data->jumlah_penumpang }}"></div>
                 </div>
                 <div class="row form-group">
                   <div class="col col-md-2"><label for="text-input" class="form-control-label">Harga</label></div>
-                    <div class="col-12 col-md-10"><input type="text" id="harga" name="harga" placeholder="Harga" class="form-control"></div>
+                    <div class="col-12 col-md-10"><input type="text" id="harga" name="harga" class="form-control" value="{{ $data->harga }}"></div>
                 </div>
                 <div class="row form-group">
                   <div class="col col-md-2"><label for="text-input" class="form-control-label">Keterangan</label></div>
-                    <div class="col-12 col-md-10"><input type="text" id="keterangan" name="keterangan" placeholder="Keterangan" class="form-control"></div>
+                    <div class="col-12 col-md-10"><input type="text" id="keterangan" name="keterangan" class="form-control" value="{{ $data->keterangan }}"></div>
                 </div>
               </div>
               <!-- /.box-body -->

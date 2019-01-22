@@ -4,7 +4,7 @@
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Data Vendor</h3>
+              <h3 class="box-title">Tambah Data Vendor</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -58,7 +58,7 @@
                         <button type="reset" class="btn btn-success btn-sm">
                           <i class="fa fa-ban"></i> Reset
                         </button>
-                        <a href="">
+                        <a href="{{route('vendor.index')}}">
                         <button type="button" class="btn btn-danger btn-sm">
                           <i class="fa fa-close"></i> Cancel
                         </button></a>

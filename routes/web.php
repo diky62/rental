@@ -48,6 +48,10 @@ Route::group(['namespace' => 'Auth'], function () {
       //MOBIL
       Route::get('mobil', 'MobilController@index')->name('mobil.index');
   		Route::get('mobil/new', 'MobilController@create')->name('mobil.tambahdata');
+      Route::post('mobil/newmobil', 'MobilController@createMobil')->name('mobil.tambahmobil');
+      Route::post('mobil/hapusmobil/{id}', 'MobilController@destroy')->name('mobil.delete');
+      Route::get('mobil/editmobil/{id}', 'MobilController@edit')->name('mobil.edit');
+      Route::post('mobil/editmobil/{id}', 'MobilController@update')->name('mobil.update');
 
       //RENTAL
       Route::get('rental', 'RentalController@index')->name('rental.index');
@@ -56,6 +60,9 @@ Route::group(['namespace' => 'Auth'], function () {
       //VENDOR
       Route::get('vendor', 'VendorController@index')->name('vendor.index');
       Route::get('vendor/new', 'VendorController@create')->name('vendor.tambahdata');
-      Route::post('vendor/newVendor', 'VendorController@createVendor')->name('vendor.tambahVendor');
+      Route::post('vendor/newvendor', 'VendorController@createVendor')->name('vendor.tambahVendor');
+      Route::post('vendor/hapusvendor/{id}', 'VendorController@destroy')->name('vendor.delete');
+      Route::get('vendor/editvendor/{id}', 'VendorController@edit')->name('vendor.edit');
+      Route::post('vendor/editvendor/{id}', 'VendorController@update')->name('vendor.update');
     });
 ;

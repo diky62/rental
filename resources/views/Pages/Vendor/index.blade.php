@@ -30,22 +30,26 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>
-                        <center><a href=""><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
-                        <form action="" method="post" style="display: inline-block">
-                        <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
-                        </form>
-                      </td>
-                      <td>1</td>
-                      <td>Avanza</td>
-                      <td>123456789098765</td>
-                      <td>Ungu</td>
-                      <td>blablabla</th>
-                      <td>5</td>
-                      <td>700000</td>
-                      <td>mobil ini blablabal</td>
+                  @php $no = 1; @endphp
+                      @foreach($data as $datas)
+                        <td>{{$no++}}</td>
+                        <td>
+                              <center><a href="{{route('mobil.edit', [$datas]) }}"><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
+                              <form action="{{ route('mobil.delete', $datas->id) }}" method="post" style="display: inline-block">
+                                {{ csrf_field() }}
+                              <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
+                              </form>
+                            </td>
+                        <td>{{$datas->Vendor->nama_rental}}</td>
+                        <td>{{$datas->nama_mobil}}</td>
+                        <td>{{$datas->no_polisi}}</td>
+                        <td>{{$datas->warna}}</td>
+                        <td>{{$datas->transmisi}}</td>
+                        <td>{{$datas->jumlah_penumpang}}</td>
+                        <td>{{$datas->harga}}</td>
+                        <td>{{$datas->keterangan}}</td>
                 </tr>
+                  @endforeach
                 </tfoot>
               </table>
             </div>
