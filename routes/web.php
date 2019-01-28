@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('home1','home1Controller@index')->name('home1');
+Route::get('home2','home2Controller@index')->name('home2');
 
 Route::group(['namespace' => 'Auth'], function () {
 		Route::get('login', 'LoginController@showLogin')->name('showlogin');
@@ -36,6 +37,15 @@ Route::group(['namespace' => 'Auth'], function () {
       //Route::post('role/update/{id}', 'RoleManagementController@UpdateRole')->name('role.update');
       //Route::delete('role/{id}', 'RoleManagementController@destroy')->name('role.delete');
 
+
+      //MANAGEMENT PROFIL
+      Route::get('profil', 'ProfilManagementController@index')->name('profil.index');
+
+      //MANAGEMENT PESANAN
+      Route::get('histori', 'HistoriManagementController@index')->name('histori.index');
+
+      //MANAGEMENT RESERVASI (USER)
+      Route::get('reservasi', 'ReservasiManagementController@index')->name('reservasi.index');
 
       //USER WEB MANAGEMENT
       Route::get('user', 'ControllerUser@data')->name('user.data');
