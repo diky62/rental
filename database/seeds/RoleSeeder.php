@@ -16,5 +16,13 @@ class RoleSeeder extends Seeder
             'name'=>'Administrator',
             'level'=>1
         ]);
+        DB::table('roles')->insert([
+            'name'=>'Vendor',
+            'level'=>2
+        ]);
+        DB::table('roles')->insert([
+            'name'=>'User',
+            'level'=>3
+        ]);
     }
 }

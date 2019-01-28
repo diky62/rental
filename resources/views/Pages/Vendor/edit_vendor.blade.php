@@ -33,9 +33,40 @@
                     <div class="col-12 col-md-10"><input type="text" id="nama_pemilik" name="nama_pemilik" class="form-control" value="{{ $vendor->nama_pemilik }}"></div>
                 </div>
                 <div class="row form-group">
-                  <div class="col col-md-2"><label for="text-input" class="form-control-label">Nama Bank</label></div>
-                    <div class="col-12 col-md-10"><input type="text" id="nama_bank" name="nama_bank" class="form-control" value="{{ $vendor->nama_bank }}"></div>
-                </div>
+                            <div class="col col-md-2"><label for="select" class=" form-control-label">Nama Bank</label></div>
+                            <div class="col-12 col-md-10">
+                              <select name="nama_bank" id="nama_bank" class="standardSelect" tabindex="1">
+                                <option value="{{$vendor->nama_bank}}">{{$vendor->nama_bank}}</option>
+                                <option value="Bank Anda">Bank Anda</option>
+                                <option value="Bank BCA">Bank BCA</option>
+                                <option value="Bank BCA Syariah">Bank BCA Syariah</option>
+                                <option value="Bank BJB">Bank BJB</option>
+                                <option value="Bank BJB Syariah">Bank BJB Syariah</option>
+                                <option value="Bank BNI">Bank BNI</option>
+                                <option value="Bank BNI Syariah">Bank BNI Syariah</option>
+                                <option value="Bank BRI">Bank BRI</option>
+                                <option value="Bank BRI Syariah">Bank BRI Syariah</option>
+                                <option value="Bank BTN">Bank BTN</option>
+                                <option value="Bank BTN Syariah">Bank BTN Syariah</option>
+                                <option value="Bank Bukopin">Bank Bukopin</option>
+                                <option value="Bank Syariah Bukopin">Bank Bukopin Syariah</option>
+                                <option value="Bank Danamon Keluarga">Bank Danamon Keluarga</option>
+                                <option value="Bank Indonesia">Bank Indonesia</option>
+                                <option value="Bank Mandiri">Bank Mandiri</option>
+                                <option value="Bank Syariah Mandiri">Bank Syariah Mandiri</option>
+                                <option value="Bank Mayora">Bank Mayora</option>
+                                <option value="Bank Mega">Bank Mega</option>
+                                <option value="Bank Mega Syariah">Bank Mega Syariah</option>
+                                <option value="Bank Mybank Indonesia">Bank Mybank Indonesia</option>
+                                <option value="Bank Mybank Syariah Indonesia">Bank Mybank Syariah Indonesia</option>
+                                <option value="Bank Sinarmas">Bank Sinarmas</option>
+                                <option value="Panin Bank">Panin Bank Syariah</option>
+                                <option value="Bank Royal Indonesia">Bank Royal Indonesia</option>
+                                <option value="CIMB Niaga">CIMB Niaga</option>
+                                <option value="CIMB Niaga Syariah">CIMB Niaga Syariah</option>xam
+                              </select>
+                            </div>
+                          </div>
                 <div class="row form-group">
                   <div class="col col-md-2"><label for="text-input" class="form-control-label">No HP</label></div>
                     <div class="col-12 col-md-10"><input type="text" id="no_hp" name="no_hp" class="form-control" value="{{ $vendor->no_hp }}"></div>

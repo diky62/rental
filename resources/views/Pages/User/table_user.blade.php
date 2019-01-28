@@ -1,19 +1,5 @@
 @extends('layouts.admin_view')
 @section('content')
-<!-- Content Wrapper. Contains page content -->
-  <!-- <div class="content-wrapper">
-
-    <section class="content-header">
-      <h1>
-        Data Tables
-        <small>advanced tables</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Data tables</li>
-      </ol>
-    </section> -->
 
     <!-- Main content -->
         <section class="content">
@@ -42,21 +28,26 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>
-                            <center><a href=""><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
-                            <form action="" method="post" style="display: inline-block">
-                            <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
-                            </form>
-                          </td>
-                      <td>Lufianti</td>
-                      <td>1234567890987654</td>
-                      <td>Desa Kalitengah</th>
-                      <td>Lufianti08@gmail.com</td>
-                      <td>089654283916</td>
+                      @php $no = 1; @endphp
+                          @foreach($user as $users)
+                            <td>{{$no++}}</td>
+                            <td>
+                                  <center><a href=""><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
+                                  <form action="{{ route('user.delete', $users->id) }}" method="post" style="display: inline-block">
+                                    {{ csrf_field() }}
+                                  <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
+                                  </form>
+                                </td>
+                            <td>{{$users->name}}</td>
+                            <td>{{$users->nik}}</td>
+                            <td>{{$users->provinsi_id}}</td>
+                            <td>{{$users->kabupaten_id}}</td>
+                            <td>{{$users->kecamatan_id}}</td>
+                            <td>{{$users->alamat}}</td>
+                            <td>{{$users->email}}</td>
+                            <td>{{$users->name}}</td>
                     </tr>
-
+                      @endforeach
                     </tfoot>
                   </table>
                 </div>
