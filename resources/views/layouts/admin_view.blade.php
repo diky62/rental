@@ -276,7 +276,8 @@
             </ul>
           </li> --}}
           <!-- User Account: style can be found in dropdown.less -->
-          <li class="nav-item dropdown">
+           <li><a href="{{ route('logout') }}"><i class="nav-link dropdown-toggle"></i>Logout</a></li>
+              <!-- <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -292,7 +293,7 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
+                            </li> -->
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
