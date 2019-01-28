@@ -10,9 +10,9 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <div align="right">
+              <!-- <div align="right">
                 <a href="{{ route('rental.tambahdata') }}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; Tambah</button></a>
-                  </div><br>
+                  </div><br> -->
               <table id="example1" class="table table-bordered table-hover">
                 <thead>
                 <tr>
@@ -27,25 +27,28 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>
-                        <center><a href=""><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
-                        <form action="" method="post" style="display: inline-block">
-                        <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
-                        </form>
-                      </td>
-                  <td>User</td>
-                  <td>1</td>
-                  <td></td>
-                  <td></td>
-                  <td>2000000</td>
-                  <td><form action="" method="post">
-                      <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-danger btn-sm">False</i></button>
-                      <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-primary btn-sm">True</i></button>
-                  </form>
-                  </td>
-                </tr>
+                  <tr>
+                    @php $no = 1; @endphp
+                        @foreach($rental as $rentals)
+                          <td>{{$no++}}</td>
+                          <td>
+                                <form action="{{ route('rental.delete', $rentals->id) }}" method="post" style="display: inline-block">
+                                  {{ csrf_field() }}
+                                <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
+                                </form>
+                              </td>
+                          <td>{{$rentals->Users->name}}</td>
+                          <td>{{$rentals->Mobil->nama_mobil}}</td>
+                          <td>{{$rentals->tanggal_rental}}</td>
+                          <td>{{$rentals->tanggal_kembali}}</td>
+                          <td>{{$rentals->harga_sewa}}</td>
+                          <td><form action="" method="post">
+                              <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-danger btn-sm">False</i></button>
+                              <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-primary btn-sm">True</i></button>
+                          </form>
+                          </td>
+                  </tr>
+                    @endforeach
                 </tfoot>
               </table>
             </div>

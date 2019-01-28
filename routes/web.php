@@ -51,7 +51,7 @@ Route::group(['namespace' => 'Auth'], function () {
       Route::get('user', 'ControllerUser@data')->name('user.data');
       //Route::get('user/edituser/{id}', 'ControllerUser@edit')->name('user.edit');
       //Route::post('user/edituser/{id}', 'ControllerUser@update')->name('user.update');
-      //Route::post('user/hapususer/{id}', 'ControllerUser@destroy')->name('user.delete');
+      Route::post('user/hapususer/{id}', 'ControllerUser@destroy')->name('user.delete');
       Route::get('user/newUser', 'ControllerUser@newUser')->name('user.newUser');
       //Route::post('user/tambahuser', 'ControllerUser@createUser')->name('user.tambah');
 
@@ -66,6 +66,7 @@ Route::group(['namespace' => 'Auth'], function () {
       //RENTAL
       Route::get('rental', 'RentalController@index')->name('rental.index');
   		Route::get('rental/new', 'RentalController@create')->name('rental.tambahdata');
+      Route::post('rental/hapusrental/{id}', 'RentalController@destroy')->name('rental.delete');
 
       //VENDOR
       Route::get('vendor', 'VendorController@index')->name('vendor.index');

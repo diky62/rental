@@ -5,22 +5,24 @@ namespace App\Http\Controllers\Crud;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Rental;
+use App\User;
+use App\Mobil;
 
 class RentalController extends Controller
 {
     public function index()
     {
     	$page = 'Pages.Report.index';
-      $data = Rental::all();
-      return view($page)->with(compact('data'));
+      $rental = Rental::all();
+      return view($page)->with(compact('rental'));
     }
 
-    public function create()
-    {
-      $page = 'Pages.Report.newRental';
-      $data = Rental::all();
-      return view($page)->with(compact('data'));
-    }
+    // public function create()
+    // {
+    //   $page = 'Pages.Report.newRental';
+    //   $rental = Rental::all();
+    //   return view($page)->with(compact('rental'));
+    // }
 
    // public function edit($id)
    // {
@@ -48,27 +50,26 @@ class RentalController extends Controller
    //   return redirect()->route('superadmin.user.edit');
    //  }
    //
-   //  public function destroy($id)
-   //  {
-   //     $user = Users::findOrFail($id);
-   //    // $user = Users::where('id', $id)->first();
-   //    $user->delete();
-   //    return redirect()->route('superadmin.user.data')->with('alert-success','Data berhasi dihapus!');
-   //  }
+    public function destroy($id)
+    {
+      $rental = Rental::findOrFail($id);
+      $rental->delete();
+      return redirect()->route('rental.index')->with('alert-success','Data berhasi dihapus!');
+    }
    //
    //
-   //  public function createUser(Request $request)
-   //    {
-   //        $user = new Users();
-   //        $user->name = $request->input('name');
-   //        $user->role_id = $request->input('level');
-   //        $user->email = $request->input('email');
-   //        $user->fill([
-   //          'password' => bcrypt($request->password)
-   //        ]);
-   //        $user->save();
-   //        return redirect()->route('superadmin.user.data')->with('alert-success','Data berhasil ditambahkan!');
-   //        $user->reset();
-   //        return redirect()->route('superadmin.user.data');
-   //      }
+    // public function createUser(Request $request)
+    //   {
+    //       $user = new Users();
+    //       $user->name = $request->input('name');
+    //       $user->role_id = $request->input('level');
+    //       $user->email = $request->input('email');
+    //       $user->fill([
+    //         'password' => bcrypt($request->password)
+    //       ]);
+    //       $user->save();
+    //       return redirect()->route('superadmin.user.data')->with('alert-success','Data berhasil ditambahkan!');
+    //       $user->reset();
+    //       return redirect()->route('superadmin.user.data');
+    //     }
 }

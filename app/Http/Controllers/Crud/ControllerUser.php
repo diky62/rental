@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Crud;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Roles;
+use App\Provinsi;
+use App\Kabupaten;
+use App\Kecamatan;
 
 class ControllerUser extends Controller
 {
@@ -48,13 +52,12 @@ class ControllerUser extends Controller
    //   return redirect()->route('superadmin.user.edit');
    //  }
    //
-   //  public function destroy($id)
-   //  {
-   //     $user = Users::findOrFail($id);
-   //    // $user = Users::where('id', $id)->first();
-   //    $user->delete();
-   //    return redirect()->route('superadmin.user.data')->with('alert-success','Data berhasi dihapus!');
-   //  }
+    public function destroy($id)
+    {
+      $user = User::findOrFail($id);
+      $user->delete();
+      return redirect()->route('user.data')->with('alert-success','Data berhasi dihapus!');
+    }
    //
    //
    //  public function createUser(Request $request)
