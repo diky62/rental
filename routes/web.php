@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('home1','home1Controller@index')->name('home1');
+Route::get('home2','home2Controller@index')->name('home2');
 
 Route::group(['namespace' => 'Auth'], function () {
 		Route::get('login', 'LoginController@showLogin')->name('showlogin');
@@ -36,6 +37,11 @@ Route::group(['namespace' => 'Auth'], function () {
       //Route::post('role/update/{id}', 'RoleManagementController@UpdateRole')->name('role.update');
       Route::delete('role/{id}', 'RoleManagementController@destroy')->name('role.delete');
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 3c7fbe48a44eb1cda59cd48b1d7ba0542b333837
       //MANAGEMENT PROFIL
       Route::get('profil', 'ProfilManagementController@index')->name('profil.index');
 
