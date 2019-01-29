@@ -19,7 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('home1','home1Controller@index')->name('home1');
-Route::get('home2','home2Controller@index')->name('home2');
 
 Route::group(['namespace' => 'Auth'], function () {
 		Route::get('login', 'LoginController@showLogin')->name('showlogin');
@@ -31,13 +30,14 @@ Route::group(['namespace' => 'Auth'], function () {
 
       //ROLE MANAGEMENT
       Route::get('role', 'RoleManagementController@index')->name('role.index');
-  		Route::get('role/new', 'RoleManagementController@create')->name('role.tambahdata');
+  		// Route::get('role/new', 'RoleManagementController@create')->name('role.tambahdata');
   		//Route::post('role/new', 'RoleManagementController@save')->name('role.save');
       //Route::get('role/update/{id}', 'RoleManagementController@edit')->name('role.edit');
       //Route::post('role/update/{id}', 'RoleManagementController@UpdateRole')->name('role.update');
-      //Route::delete('role/{id}', 'RoleManagementController@destroy')->name('role.delete');
+      Route::delete('role/{id}', 'RoleManagementController@destroy')->name('role.delete');
 
 
+<<<<<<< HEAD
       //MANAGEMENT PROFIL
       Route::get('profil', 'ProfilManagementController@index')->name('profil.index');
 
@@ -47,12 +47,14 @@ Route::group(['namespace' => 'Auth'], function () {
       //MANAGEMENT RESERVASI (USER)
       Route::get('reservasi', 'ReservasiManagementController@index')->name('reservasi.index');
 
+=======
+>>>>>>> d777d47733ae7b1e97c74cdc908bf8971accacd3
       //USER WEB MANAGEMENT
       Route::get('user', 'ControllerUser@data')->name('user.data');
       //Route::get('user/edituser/{id}', 'ControllerUser@edit')->name('user.edit');
       //Route::post('user/edituser/{id}', 'ControllerUser@update')->name('user.update');
       Route::post('user/hapususer/{id}', 'ControllerUser@destroy')->name('user.delete');
-      Route::get('user/newUser', 'ControllerUser@newUser')->name('user.newUser');
+      //Route::get('user/newUser', 'ControllerUser@newUser')->name('user.newUser');
       //Route::post('user/tambahuser', 'ControllerUser@createUser')->name('user.tambah');
 
       //MOBIL
