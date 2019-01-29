@@ -36,8 +36,6 @@ Route::group(['namespace' => 'Auth'], function () {
       //Route::post('role/update/{id}', 'RoleManagementController@UpdateRole')->name('role.update');
       Route::delete('role/{id}', 'RoleManagementController@destroy')->name('role.delete');
 
-
-<<<<<<< HEAD
       //MANAGEMENT PROFIL
       Route::get('profil', 'ProfilManagementController@index')->name('profil.index');
 
@@ -47,8 +45,6 @@ Route::group(['namespace' => 'Auth'], function () {
       //MANAGEMENT RESERVASI (USER)
       Route::get('reservasi', 'ReservasiManagementController@index')->name('reservasi.index');
 
-=======
->>>>>>> d777d47733ae7b1e97c74cdc908bf8971accacd3
       //USER WEB MANAGEMENT
       Route::get('user', 'ControllerUser@data')->name('user.data');
       //Route::get('user/edituser/{id}', 'ControllerUser@edit')->name('user.edit');
