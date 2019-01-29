@@ -42,7 +42,7 @@ Route::group(['namespace' => 'Auth'], function () {
       Route::get('profil', 'ProfilManagementController@index')->name('profil.index');
 
       //MANAGEMENT PESANAN
-      Route::get('histori', 'HistoriManagementController@index')->name('histori.index');
+      Route::get('histori', 'HistoriPesananController@index')->name('histori.index');
 
       //MANAGEMENT RESERVASI (USER)
       Route::get('reservasi', 'ReservasiManagementController@index')->name('reservasi.index');
