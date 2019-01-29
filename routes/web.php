@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('home1','home1Controller@index')->name('home1');
+Route::get('home2','home2Controller@index')->name('home2');
 
 Route::group(['namespace' => 'Auth'], function () {
 		Route::get('login', 'LoginController@showLogin')->name('showlogin');
@@ -37,7 +38,7 @@ Route::group(['namespace' => 'Auth'], function () {
       Route::delete('role/{id}', 'RoleManagementController@destroy')->name('role.delete');
 
 
-<<<<<<< HEAD
+
       //MANAGEMENT PROFIL
       Route::get('profil', 'ProfilManagementController@index')->name('profil.index');
 
@@ -47,8 +48,6 @@ Route::group(['namespace' => 'Auth'], function () {
       //MANAGEMENT RESERVASI (USER)
       Route::get('reservasi', 'ReservasiManagementController@index')->name('reservasi.index');
 
-=======
->>>>>>> d777d47733ae7b1e97c74cdc908bf8971accacd3
       //USER WEB MANAGEMENT
       Route::get('user', 'ControllerUser@data')->name('user.data');
       //Route::get('user/edituser/{id}', 'ControllerUser@edit')->name('user.edit');
