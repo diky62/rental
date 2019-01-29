@@ -12,16 +12,16 @@ class RoleManagementController extends Controller
     public function index()
     {
         $page = 'Pages.Role.index';
-        $data = Roles::all();
-        return view($page)->with(compact('data'));
+        $role = Roles::all();
+        return view($page)->with(compact('role'));
 	  }
 
-	public function create()
-    {
-        $page = 'Pages.Role.newRole';
-        $data = Roles::all();
-        return view($page)->with(compact('data'));
-	}
+	// public function create()
+  //   {
+  //       $page = 'Pages.Role.newRole';
+  //       $data = Roles::all();
+  //       return view($page)->with(compact('data'));
+	// }
 
   // public function save(Request $request){
   //   // dd($request->request);
@@ -107,10 +107,10 @@ class RoleManagementController extends Controller
   //     return redirect()->route('superadmin.role.edit');
   //  }
   //
-  // public function destroy($id){
-  //   $delete = Role::find($id)->delete();
-  //   return !$delete
-  //           ? redirect()->back()->with('warning', 'Gagal hapus data')->withInput($request->all())
-  //           : redirect()->route('superadmin.role.index')->with('success', 'Berhasil hapus data');
-  //   }
+  public function destroy($id){
+    $delete = Roles::find($id)->delete();
+    return !$delete
+            ? redirect()->back()->with('warning', 'Gagal hapus data')->withInput($request->all())
+            : redirect()->route('role.index')->with('success', 'Berhasil hapus data');
+    }
 }

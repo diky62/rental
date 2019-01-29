@@ -10,9 +10,6 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <div align="right">
-                <a href="{{ route('role.tambahdata') }}"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; Tambah</button></a>
-                  </div><br>
               <table id="example1" class="table table-bordered table-hover">
                 <thead>
                 <tr>
@@ -24,16 +21,21 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>
-                        <center><a href=""><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
-                        <form action="" method="post" style="display: inline-block">
-                        <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
+                  @php $no = 1; @endphp
+                      @foreach($role as $roles)
+                        <td>{{$no++}}</td>
+                        <td>
+                              <form action="{{ route('role.delete', $roles->id) }}" method="post" style="display: inline-block">
+                                {{ csrf_field() }}
+                              <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
+                              </form>
+                            </td>
+                        <td>{{$roles->name}}</td>
+                        <td>{{$roles->level}}</td>
                         </form>
-                      </td>
-                  <td>Lufianti</td>
-                  <td>User</td>
+                        </td>
                 </tr>
+                  @endforeach
                 </tfoot>
               </table>
             </div>

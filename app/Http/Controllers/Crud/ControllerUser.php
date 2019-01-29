@@ -19,12 +19,12 @@ class ControllerUser extends Controller
       return view($page)->with(compact('user'));
     }
 
-    public function newUser()
-      {
-          $page = 'Pages.User.tambah_user';
-          $user = User::all();
-          return view($page)->with(compact('user'));
-    }
+    // public function newUser()
+    //   {
+    //       $page = 'Pages.User.tambah_user';
+    //       $user = User::all();
+    //       return view($page)->with(compact('user'));
+    // }
 
    // public function edit($id)
    // {
