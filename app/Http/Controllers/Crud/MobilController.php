@@ -40,6 +40,17 @@ class MobilController extends Controller
      $data->jumlah_penumpang = $request->jumlah_penumpang;
      $data->harga = $request->harga;
      $data->keterangan = $request->keterangan;
+     if (empty($request->file('gambar'))){
+      $data->gambar = $data->gambar;
+      }
+      else{
+        unlink('uploads/gambar/'.$data->gambar); //menghapus file lama
+        $file = $request->file('gambar');
+        $ext = $file->getClientOriginalExtension();
+        $newName = rand(100000,1001238912).".".$ext;
+        $file->move('uploads/gambar',$newName);
+        $data->gambar = $newName;
+      }
      $isSuccess = $data->save();
      if ($isSuccess) {
        // return success
@@ -71,6 +82,11 @@ class MobilController extends Controller
           $data->jumlah_penumpang = $request->input('jumlah_penumpang');
           $data->harga = $request->input('harga');
           $data->keterangan = $request->input('keterangan');
+          $file = $request->file('gambar');
+          $ext = $file->getClientOriginalExtension();
+          $newName = rand(100000,1001238912).".".$ext;
+          $file->move('uploads/gambar',$newName);
+          $data->gambar = $newName;
           $data->save();
           return redirect()->route('mobil.index')->with('alert-success','Data berhasil ditambahkan!');
           $user->reset();

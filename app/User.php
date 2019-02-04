@@ -29,9 +29,15 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     public function roles(){
-        return $this->hasOne("App\Roles");
+        return $this->belongsTo("App\Roles");
     }
     public function provinsi(){
-        return $this->hasOne("App\Provinsi");
+        return $this->belongsTo("App\Provinsi");
+    }
+    public function kabupaten(){
+        return $this->belongsTo("App\Kabupaten");
+    }
+    public function kecamatan(){
+        return $this->belongsTo("App\Kecamatan");
     }
 }

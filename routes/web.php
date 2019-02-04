@@ -49,6 +49,17 @@ Route::group(['namespace' => 'Auth'], function () {
       //Route::post('role/update/{id}', 'RoleManagementController@UpdateRole')->name('role.update');
       Route::delete('role/{id}', 'RoleManagementController@destroy')->name('role.delete');
 
+<<<<<<< HEAD
+=======
+      //MANAGEMENT PROFIL
+      Route::get('profil', 'ProfilManagementController@index')->name('profil.index');
+
+      //MANAGEMENT PESANAN
+      Route::get('histori', 'HistoriPesananController@index')->name('histori.index');
+
+      //MANAGEMENT RESERVASI (USER)
+      Route::get('reservasi', 'ReservasiManagementController@index')->name('reservasi.index');
+>>>>>>> 8c49b39eeb5b9a62f85fa9e66018037685d59ee3
 
       //USER WEB MANAGEMENT
       Route::get('user', 'ControllerUser@data')->name('user.data');
