@@ -24,7 +24,7 @@ class CreateMobilTable extends Migration
             $table->integer('jumlah_penumpang');
             $table->integer('harga');
             $table->string('keterangan');
-            $table->string('gambar')
+            $table->string('gambar');
             $table->timestamps();
 
             $table->foreign('vendor_id')->references('id')->on('vendor')->onDelete('cascade')->onUpdate('cascade');

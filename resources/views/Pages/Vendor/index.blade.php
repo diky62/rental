@@ -26,6 +26,7 @@
                   <th>Jumlah Penumpang</th>
                   <th>Harga</th>
                   <th>Keterangan</th>
+                  <th>Gambar</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -48,6 +49,7 @@
                         <td>{{$datas->jumlah_penumpang}}</td>
                         <td>{{$datas->harga}}</td>
                         <td>{{$datas->keterangan}}</td>
+                        <td><img src="{{ url('uploads/gambar/'.$datas->gambar) }}" style="width: 75px; height: 75px;"></td>
                 </tr>
                   @endforeach
                 </tfoot>
