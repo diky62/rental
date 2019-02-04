@@ -16,7 +16,7 @@ class DashboardUserController extends Controller
     {
         //
 
-        return view('pages2.histori');
+        return view('pages2.dashboard.index');
     }
 
     /**

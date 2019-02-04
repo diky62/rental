@@ -330,12 +330,17 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header" >MAIN MENU</li>
-        <li class="active treeview">
+        <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <i class="fa fa-home"></i>
+            <span>Home</span>
             <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="{{url('dashboarduser')}}"><i class="fa fa-home"></i>Menu Home</a></li>
+          </ul>
         </li>
 
         <li class="treeview">
@@ -347,7 +352,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{-- {{route('profil.index')}} --}}"><i class="fa fa-circle-o"></i>Manajemen Profil</a></li>
+            <li><a href="{{url('dashboarduser')}}"><i class="fa fa-circle-o"></i>Manajemen Profil</a></li>
           </ul>
         </li>
 
@@ -360,7 +365,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{-- {{ route('histori.index') }} --}}"><i class="fa fa-circle-o"></i>Data Pesanan</a></li>
+            <li><a href="{{url('history')}}"><i class="fa fa-circle-o"></i>Data Pesanan</a></li>
           </ul>
         </li>
 

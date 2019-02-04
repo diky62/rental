@@ -21,9 +21,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('home1','home1Controller@index')->name('home1');
 Route::get('daftar','Register1Controller@index')->name('daftar');
 Route::get('daftar','Register1Controller@store')->name('daftar');
+
 Route::resources([
   "daftar"=>"Register1Controller",
-  "dashboarduser"=>"DashboardUserController"
+  
   ]);
 
 
@@ -37,6 +38,11 @@ Route::group(['namespace' => 'Auth'], function () {
   Route::group(['namespace' => 'Crud'], function () {
 
     //Dashboard User
+
+    Route::resources([
+    "dashboarduser"=>"DashboardUserController",
+    "history"=>"HistoriPesananController"
+  ]);
 
     
 
