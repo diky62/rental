@@ -52,6 +52,12 @@
                     <div class="col-12 col-md-10"><input type="text" id="keterangan" name="keterangan" placeholder="Keterangan" class="form-control"></div>
                 </div>
               </div>
+              <div class="row form-group">
+                <div class="col col-md-2"><label for="text-input" class="form-control-label">Gambar</label></div>
+                <div class="col-12 col-md-10"><input type="file" class="form-control" id="gambar" name="gambar">
+              </div>
+            </div>
+            </div>
               <!-- /.box-body -->
               <div class="box-footer">
                         <a href="{{route('mobil.tambahmobil')}}">
