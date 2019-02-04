@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('daftar.store') }}" >
+                    <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -39,7 +39,48 @@
                             </div>
                         </div>
 
-                
+                        <div class="form-group row">
+                            <label for="provvinsi" class="col-md-4 col-form-label text-md-right">{{ __('Provinsi') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="provinsi" type="text" class="form-control{{ $errors->has('provinsi') ? ' is-invalid' : '' }}" name="provinsi" value="{{ old('provinsi') }}" required autofocus>
+
+                                @if ($errors->has('provinsi'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('provinsi') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="kabupaten" class="col-md-4 col-form-label text-md-right">{{ __('Kabupaten') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="kabupaten" type="text" class="form-control{{ $errors->has('kabupaten') ? ' is-invalid' : '' }}" name="kabupaten" value="{{ old('kabupaten') }}" required autofocus>
+
+                                @if ($errors->has('kabupaten'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('kabupaten') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="kecamatan" class="col-md-4 col-form-label text-md-right">{{ __('Kecamatan') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="kecamatan" type="text" class="form-control{{ $errors->has('kecamatan') ? ' is-invalid' : '' }}" name="kecamatan" value="{{ old('kecamatan') }}" required autofocus>
+
+                                @if ($errors->has('kecamatan'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('kecamatan') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <label for="alamat" class="col-md-4 col-form-label text-md-right">{{ __('Alamat') }}</label>
 
@@ -69,19 +110,17 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="roles_id" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}
-                            </label>
+                            <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
 
                             <div class="col-md-6">
-                                <select class="form-control" name="roles_id" id="roles_id">
-                                    @foreach($roles as $role)
-                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
-                                    @endforeach 
+                                 <select class="form-control" name="role">
+                                    @foreach($role as $index => $ini)
+                                    <option value="{{$ini->id}}">{{$ini->content}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
 
-                       
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 

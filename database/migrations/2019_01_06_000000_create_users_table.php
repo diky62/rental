@@ -18,15 +18,15 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('nik');
-            $table->integer('provinsi_id')->unsigned();
-            $table->integer('kabupaten_id')->unsigned();
-            $table->integer('kecamatan_id')->unsigned();
+            $table->integer('provinsi_id')->unsigned()->nullable();;
+            $table->integer('kabupaten_id')->unsigned()->nullable();;
+            $table->integer('kecamatan_id')->unsigned()->nullable();;
             $table->string('alamat');
             $table->string('email')->unique();
             $table->integer('roles_id')->unsigned();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('no_hp');
+            $table->string('no_hp')->nullable();;
             $table->rememberToken();
             $table->timestamps();
 

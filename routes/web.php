@@ -19,7 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('home1','home1Controller@index')->name('home1');
-Route::get('home2','home2Controller@index')->name('home2');
+Route::get('daftar','Register1Controller@index')->name('daftar');
+Route::get('daftar','Register1Controller@store')->name('daftar');
+Route::resources([
+  "daftar"=>"Register1Controller",
+  "dashboarduser"=>"DashboardUserController"
+  ]);
+
+
 
 Route::group(['namespace' => 'Auth'], function () {
 		Route::get('login', 'LoginController@showLogin')->name('showlogin');
@@ -29,6 +36,11 @@ Route::group(['namespace' => 'Auth'], function () {
 
   Route::group(['namespace' => 'Crud'], function () {
 
+    //Dashboard User
+
+    
+
+
       //ROLE MANAGEMENT
       Route::get('role', 'RoleManagementController@index')->name('role.index');
   		// Route::get('role/new', 'RoleManagementController@create')->name('role.tambahdata');
@@ -37,19 +49,6 @@ Route::group(['namespace' => 'Auth'], function () {
       //Route::post('role/update/{id}', 'RoleManagementController@UpdateRole')->name('role.update');
       Route::delete('role/{id}', 'RoleManagementController@destroy')->name('role.delete');
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 3c7fbe48a44eb1cda59cd48b1d7ba0542b333837
-      //MANAGEMENT PROFIL
-      Route::get('profil', 'ProfilManagementController@index')->name('profil.index');
-
-      //MANAGEMENT PESANAN
-      Route::get('histori', 'HistoriPesananController@index')->name('histori.index');
-
-      //MANAGEMENT RESERVASI (USER)
-      Route::get('reservasi', 'ReservasiManagementController@index')->name('reservasi.index');
 
       //USER WEB MANAGEMENT
       Route::get('user', 'ControllerUser@data')->name('user.data');
