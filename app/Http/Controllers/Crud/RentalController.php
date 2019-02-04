@@ -17,6 +17,21 @@ class RentalController extends Controller
       return view($page)->with(compact('rental'));
     }
 
+    public function rentalStatus(Request $request, $id){
+      $rentalStatus = Rental::findOrFail($id);
+      if($rentalStatus->status == 0 || null){
+        $rentalStatus->status = $request->status = 1;
+        $rentalStatus->save();
+       // dd($jadwalStatus);
+       return redirect()->route('rental.index');
+      }
+      else {
+        $rentalStatus->status = $request->status = 0;
+        $rentalStatus->save();
+        return redirect()->route('rental.index');
+      }
+    }
+
     // public function create()
     // {
     //   $page = 'Pages.Report.newRental';

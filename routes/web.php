@@ -24,7 +24,7 @@ Route::get('daftar','Register1Controller@store')->name('daftar');
 
 Route::resources([
   "daftar"=>"Register1Controller",
-  
+
   ]);
 
 
@@ -44,7 +44,7 @@ Route::group(['namespace' => 'Auth'], function () {
     "history"=>"HistoriPesananController"
   ]);
 
-    
+
 
 
       //ROLE MANAGEMENT
@@ -64,7 +64,7 @@ Route::group(['namespace' => 'Auth'], function () {
 
       //MANAGEMENT RESERVASI (USER)
       Route::get('reservasi', 'ReservasiManagementController@index')->name('reservasi.index');
- 
+
 
       //USER WEB MANAGEMENT
       Route::get('user', 'ControllerUser@data')->name('user.data');
@@ -86,6 +86,7 @@ Route::group(['namespace' => 'Auth'], function () {
       Route::get('rental', 'RentalController@index')->name('rental.index');
   		Route::get('rental/new', 'RentalController@create')->name('rental.tambahdata');
       Route::post('rental/hapusrental/{id}', 'RentalController@destroy')->name('rental.delete');
+      Route::post('rental/status/{id}', 'RentalController@rentalStatus')->name('rental.status');
 
       //VENDOR
       Route::get('vendor', 'VendorController@index')->name('vendor.index');

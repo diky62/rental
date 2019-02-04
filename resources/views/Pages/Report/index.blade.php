@@ -42,9 +42,13 @@
                           <td>{{$rentals->tanggal_rental}}</td>
                           <td>{{$rentals->tanggal_kembali}}</td>
                           <td>{{$rentals->harga_sewa}}</td>
-                          <td><form action="" method="post">
-                              <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-danger btn-sm">False</i></button>
-                              <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-primary btn-sm">True</i></button>
+                          <td><form action="{{route('rental.status', $rentals->id)}}" method="post">
+                              {{csrf_field()}}
+                            @if ($rentals->status == 0)
+                              <button type="link" onClick="return confirm('order belum dibayar?');" value="0" class="btn btn-primary btn-sm">Paid</i></button>
+                            @else
+                              <button type="link" onClick="return confirm('order sudah dibayar?');" value="1" class="btn btn-success btn-sm">Unpaid</i></button>
+                            @endif
                           </form>
                           </td>
                   </tr>
