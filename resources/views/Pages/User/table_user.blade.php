@@ -36,14 +36,14 @@
                               <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
                               </form>
                             </td>
-                        <td>{{$users->name}}</td>
-                        <td>{{$users->nik}}</td>
-                        <td>{{$users->Provinsi->nama_provinsi}}</td>
-                        <td>{{$users->Kabupaten->nama_kabupaten}}</td>
-                        <td>{{$users->kecamatan->nama_kecamatan}}</td>
-                        <td>{{$users->alamat}}</td>
-                        <td>{{$users->email}}</td>
-                        <td>{{$users->Roles->level}}</td>
+                            <td>{{$users->name}}</td>
+                            <td>{{$users->nik}}</td>
+                            <td>{{$users->Provinsi->nama_provinsi}}</td>
+                            <td>{{$users->Kabupaten->nama_kabupaten}}</td>
+                            <td>{{$users->Kecamatan->nama_kecamatan}}</td>
+                            <td>{{$users->alamat}}</td>
+                            <td>{{$users->email}}</td>
+                            <td>{{$users->Roles->level}}</td>
                         </form>
                         </td>
                 </tr>

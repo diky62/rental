@@ -44,6 +44,16 @@
                   <div class="col col-md-2"><label for="text-input" class="form-control-label">Keterangan</label></div>
                     <div class="col-12 col-md-10"><input type="text" id="keterangan" name="keterangan" class="form-control" value="{{ $data->keterangan }}"></div>
                 </div>
+                <div class="row form-group">
+                  <div class="col col-md-2"><label for="text-input" class="form-control-label">Gambar Lama</label></div>
+                    <div class="col-12 col-md-10"><img src="{{ url('uploads/gambar/'.$data->gambar) }}" style="width: 75px; height: 75px;">
+                    </div>
+                  </div>
+                  <div class="col col-md-2"><label for="text-input" class="form-control-label">Gambar Baru</label></div>
+                  <div class="row form-group">
+                    <div class="col-12 col-md-10"><input type="file" class="form-control" id="gambar" name="gambar" value="{{ $data->gambar }}">
+                    </div>
+                  </div>
               </div>
               <!-- /.box-body -->
               <div class="box-footer">

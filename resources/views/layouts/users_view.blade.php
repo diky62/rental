@@ -30,6 +30,8 @@
   <!-- DataTables -->
   <link rel="stylesheet" href="{{ asset('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
 
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
 
 
   <!-- Bootstrap 3.3.7 -->
@@ -276,8 +278,8 @@
             </ul>
           </li> --}}
           <!-- User Account: style can be found in dropdown.less -->
-           <li><a href="{{ route('logout') }}"><i class="nav-link dropdown-toggle"></i>Logout</a></li>
-              <!-- <li class="nav-item dropdown">
+         {{--   <li><a href="{{ route('logout') }}"><i class="nav-link dropdown-toggle"></i>Logout</a></li>
+              <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -293,9 +295,9 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li> -->
+                            </li>
             </ul>
-          </li>
+          </li> --}}
           <!-- Control Sidebar Toggle Button -->
           {{-- <li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
@@ -328,12 +330,17 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header" >MAIN MENU</li>
-        <li class="active treeview">
+        <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <i class="fa fa-home"></i>
+            <span>Home</span>
             <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="{{url('dashboarduser')}}"><i class="fa fa-home"></i>Menu Home</a></li>
+          </ul>
         </li>
 
         <li class="treeview">
@@ -345,7 +352,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{route('profil.index')}}"><i class="fa fa-circle-o"></i>Manajemen Profil</a></li>
+            <li><a href="{{url('dashboarduser')}}"><i class="fa fa-circle-o"></i>Manajemen Profil</a></li>
           </ul>
         </li>
 
@@ -358,7 +365,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('histori.index') }}"><i class="fa fa-circle-o"></i>Data Pesanan</a></li>
+            <li><a href="{{url('history')}}"><i class="fa fa-circle-o"></i>Data Pesanan</a></li>
           </ul>
         </li>
 
@@ -371,7 +378,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('reservasi.index') }}"><i class="fa fa-circle-o"></i>Menu Reservasi</a></li>
+            <li><a href="{{-- {{ route('reservasi.index') }} --}}"><i class="fa fa-circle-o"></i>Menu Reservasi</a></li>
           </ul>
         </li>
     </section>
@@ -619,6 +626,11 @@
 <script src="{{ asset('bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
 <!-- datepicker -->
 <script src="{{ asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style>.carousel-inner > .item > img,.carousel-inner > .item > a > img { width: 80%; margin: auto;}</style>
+
 <!-- Bootstrap WYSIHTML5 -->
 <script src="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
 <!-- Slimscroll -->
