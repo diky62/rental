@@ -35,7 +35,6 @@
                                 <form action="{{ route('rental.delete', $rentals->id) }}" method="post" style="display: inline-block">
                                   {{ csrf_field() }}
                                 <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
-                                <button type="button" class="btn btn-info" ng-click="printAll()"><i class="fa fa-print"></i> Print PDF</button>
                                 </form>
                                 <span data-toggle="modal" data-target="#modalPrint" onclick="print({{$rentals->id}})">
                                   <a class="btn btn-xs btn-default" data-toggle="tooltip" data-placement="top" title="Cetak Pesanan">
@@ -43,12 +42,11 @@
                                   </a>
                                 </span>
                               </td>
-                          <td>{{$rentals->Users->name}}</td>
+                          <td>{{$rentals->UsersMobile->name}}</td>
                           <td>{{$rentals->Mobil->nama_mobil}}</td>
                           <td>{{$rentals->tanggal_rental}}</td>
                           <td>{{$rentals->tanggal_kembali}}</td>
                           <td>{{$rentals->harga_sewa}}</td>
-<<<<<<< HEAD
                           <td><form action="{{route('rental.status', $rentals->id)}}" method="post">
                               {{csrf_field()}}
                             @if ($rentals->status == 0)
@@ -56,10 +54,6 @@
                             @else
                               <button type="link" onClick="return confirm('order sudah dibayar?');" value="1" class="btn btn-success btn-sm">Unpaid</i></button>
                             @endif
-=======
-                          <td><form action="" method="post">
-                               {{$rentals->status}}
->>>>>>> 38378df02bf4bff0977905fd97a5907fffe97465
                           </form>
                           </td>
                   </tr>
