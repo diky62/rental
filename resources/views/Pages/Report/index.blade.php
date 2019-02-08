@@ -35,6 +35,7 @@
                                 <form action="{{ route('rental.delete', $rentals->id) }}" method="post" style="display: inline-block">
                                   {{ csrf_field() }}
                                 <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
+                                <button type="button" class="btn btn-info" ng-click="printAll()"><i class="fa fa-print"></i> Print PDF</button>
                                 </form>
                               </td>
                           <td>{{$rentals->Users->name}}</td>
@@ -43,8 +44,7 @@
                           <td>{{$rentals->tanggal_kembali}}</td>
                           <td>{{$rentals->harga_sewa}}</td>
                           <td><form action="" method="post">
-                              <button type="link" onClick="return confirm('Aktifkan Jadwal ?');" value="0" class="btn btn-danger btn-sm">False</i></button>
-                              <button type="link" onClick="return confirm('Nonaktifkan Jadwal ?');" value="1" class="btn btn-primary btn-sm">True</i></button>
+                               {{$rentals->status}}
                           </form>
                           </td>
                   </tr>
