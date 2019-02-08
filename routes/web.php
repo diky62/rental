@@ -55,7 +55,6 @@ Route::group(['namespace' => 'Auth'], function () {
       //Route::post('role/update/{id}', 'RoleManagementController@UpdateRole')->name('role.update');
       Route::delete('role/{id}', 'RoleManagementController@destroy')->name('role.delete');
 
-
       //MANAGEMENT PROFIL
       Route::get('profil', 'ProfilManagementController@index')->name('profil.index');
 
