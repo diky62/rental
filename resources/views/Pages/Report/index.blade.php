@@ -36,6 +36,11 @@
                                   {{ csrf_field() }}
                                 <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
                                 </form>
+                                <span data-toggle="modal" data-target="#modalPrint" onclick="print({{$rentals->id}})">
+                                  <a class="btn btn-xs btn-default" data-toggle="tooltip" data-placement="top" title="Cetak Pesanan">
+                                  <i class="fa fa-print"></i>
+                                  </a>
+                                </span>
                               </td>
                           <td>{{$rentals->Users->name}}</td>
                           <td>{{$rentals->Mobil->nama_mobil}}</td>
