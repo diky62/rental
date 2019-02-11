@@ -345,7 +345,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i>Data Pelanggan</a></li>
+            <li><a href="{{ route('user.mobile') }}"><i class="fa fa-circle-o"></i>Data Pelanggan</a></li>
           </ul>
         </li>
 
@@ -359,7 +359,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('mobil.index') }}"><i class="fa fa-circle-o"></i>Data Mobil</a></li>
-            <li><a href="{{ route('vendor.index') }}"><i class="fa fa-circle-o"></i>Data Vendor</a></li>
+            <li><a href="{{ route('vendor.index1') }}"><i class="fa fa-circle-o"></i>Data Vendor</a></li>
           </ul>
         </li>
 

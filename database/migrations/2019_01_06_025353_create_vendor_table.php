@@ -23,7 +23,7 @@ class CreateVendorTable extends Migration
             $table->string('nama_pemilik');
             $table->string('nama_bank');
             $table->string('no_hp');
-            $table->string('status');
+            $table->string('status')->nullable();
             $table->timestamps();
 
             $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

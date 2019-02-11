@@ -89,7 +89,7 @@
                         <button type="reset" class="btn btn-success btn-sm">
                           <i class="fa fa-ban"></i> Reset
                         </button>
-                        <a href="{{route('vendor.index')}}">
+                        <a href="{{route('vendor.index1')}}">
                         <button type="button" class="btn btn-danger btn-sm">
                           <i class="fa fa-close"></i> Cancel
                         </button></a>

@@ -25,7 +25,6 @@
                   <th>Nama Pemilik</th>
                   <th>Nama Bank</th>
                   <th>No HP</th>
-                  <th>Status</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,10 +34,6 @@
                         <td>{{$no++}}</td>
                         <td>
                               <center><a href="{{route('vendor.edit', [$vendors]) }}"><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
-                              <!-- <form action="{{ route('vendor.delete', $vendors->id) }}" method="post" style="display: inline-block"> -->
-                                {{ csrf_field() }}
-                              <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
-                              </form>
                             </td>
                         <td>{{$vendors->Users->name}}</td>
                         <td>{{$vendors->nama_rental}}</td>
@@ -47,15 +42,6 @@
                         <td>{{$vendors->nama_pemilik}}</td>
                         <td>{{$vendors->nama_bank}}</td>
                         <td>{{$vendors->no_hp}}</td>
-                        <td><form action="{{route('vendor.status', $vendors->id)}}" method="post">
-                            {{csrf_field()}}
-                          @if ($vendors->status == 0)
-                            <button type="link" onClick="return confirm('apakah vendor akan dinonaktifkan?');" value="0" class="btn btn-primary btn-sm">True</i></button>
-                          @else
-                            <button type="link" onClick="return confirm('apakah vendor akan diaktifkan?');" value="1" class="btn btn-success btn-sm">False</i></button>
-                          @endif
-                        </form>
-                        </td>
                 </tr>
                   @endforeach
                 </tfoot>

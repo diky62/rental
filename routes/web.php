@@ -102,13 +102,17 @@ Route::group(['middleware'=>'role:2'],function(){
 
 	      //VENDOR
 	      // Route::get('vendor', 'VendorController@index')->name('vendor.index');
-	      Route::get('datavendor', 'VendorController@index1')->name('vendor.index1');
-	      Route::get('vendor/new', 'VendorController@create')->name('vendor.tambahdata');
-	      Route::post('vendor/newvendor', 'VendorController@createVendor')->name('vendor.tambahVendor');
+	      Route::get('datavendor', 'Vendor1Controller@index1')->name('vendor.index1');
+	      Route::get('vendor/new', 'Vendor1Controller@create')->name('vendor.tambahdata');
+	      Route::post('vendor/newvendor', 'Vendor1Controller@createVendor')->name('vendor.tambahVendor');
 	      // Route::post('vendor/hapusvendor/{id}', 'VendorController@destroy')->name('vendor.delete');
-	      Route::get('vendor/editvendor/{id}', 'VendorController@edit')->name('vendor.edit');
-	      Route::post('vendor/editvendor/{id}', 'VendorController@update')->name('vendor.update');
-	      Route::post('vendor/status/{id}', 'VendorController@vendorStatus')->name('vendor.status');
+	      Route::get('vendor/editvendor/{id}', 'Vendor1Controller@edit')->name('vendor.edit');
+	      Route::post('vendor/editvendor/{id}', 'Vendor1Controller@update')->name('vendor.update');
+	      // Route::post('vendor/status/{id}', 'Vendor1Controller@vendorStatus')->name('vendor.status');
+
+				//DATA PELANGGAN
+				Route::get('datapelanggan', 'UserMobileController@index')->name('user.mobile');
+				Route::post('datapelanggan/hapusdatapelanggan/{id}', 'UserMobileController@destroy')->name('user.mobile.delete');
 			});
 		});
 
