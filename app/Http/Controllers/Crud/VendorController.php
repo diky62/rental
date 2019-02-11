@@ -16,6 +16,13 @@ class VendorController extends Controller
       return view($page)->with(compact('vendor'));
     }
 
+    public function index1()
+    {
+    	$page = 'Pages.Vendor.vendor1';
+      $vendor = Vendor::all();
+      return view($page)->with(compact('vendor'));
+    }
+
     public function create()
     {
       $page = 'Pages.Vendor.newVendor';
@@ -42,11 +49,11 @@ class VendorController extends Controller
      $isSuccess = $vendor->save();
      if ($isSuccess) {
        // return success
-       return redirect()->route('vendor.index')->with('alert-success','Data berhasil diubah!');
+       return redirect()->route('vendor.index1')->with('alert-success','Data berhasil diubah!');
      }
      else {
        // returm failed
-       return redirect()->route('vendor.index')->with('alert-failed','Data tidak berhasil diubah!');
+       return redirect()->route('vendor.index1')->with('alert-failed','Data tidak berhasil diubah!');
      }
      $vendor->reset();
      return redirect()->route('vendor.edit');
@@ -59,6 +66,7 @@ class VendorController extends Controller
       return redirect()->route('vendor.index')->with('alert-success','Data berhasi dihapus!');
     }
 
+
     public function createVendor(Request $request)
       {
           $vendor = new Vendor();
@@ -70,8 +78,23 @@ class VendorController extends Controller
           $vendor->nama_bank = $request->input('nama_bank');
           $vendor->no_hp = $request->input('no_hp');
           $vendor->save();
-          return redirect()->route('vendor.index')->with('alert-success','Data berhasil ditambahkan!');
+          return redirect()->route('vendor.index1')->with('alert-success','Data berhasil ditambahkan!');
           $vendor->reset();
-          return redirect()->route('vendor.index');
+          return redirect()->route('vendor.index1');
+        }
+
+        public function vendorStatus(Request $request, $id){
+          $vendorStatus = Vendor::findOrFail($id);
+          if($vendorStatus->status == 0 || null){
+            $vendorStatus->status = $request->status = 1;
+            $vendorStatus->save();
+           // dd($jadwalStatus);
+           return redirect()->route('vendor.index1');
+          }
+          else {
+            $vendorStatus->status = $request->status = 0;
+            $vendorStatus->save();
+            return redirect()->route('vendor.index1');
+          }
         }
 }

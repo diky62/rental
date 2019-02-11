@@ -339,14 +339,13 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-users"></i>
-            <span>Administrator</span>
+            <span>User Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{route('role.index')}}"><i class="fa fa-circle-o"></i>Role Management</a></li>
-            <li><a href="{{route('user.data')}}"><i class="fa fa-circle-o"></i>Administrator Management</a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i>Data Pelanggan</a></li>
           </ul>
         </li>
 
@@ -359,11 +358,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="{{ route('mobil.index') }}"><i class="fa fa-circle-o"></i>Data Mobil</a></li>
             <li><a href="{{ route('vendor.index') }}"><i class="fa fa-circle-o"></i>Data Vendor</a></li>
           </ul>
         </li>
 
-        <!-- <li class="treeview">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-book"></i> <span>Report</span>
             <span class="pull-right-container">
@@ -371,8 +371,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="{{ route('rental.index') }}"><i class="fa fa-circle-o"></i>Data Rental</a></li>
           </ul>
-        </li> --> -->
+        </li>
 
     </section>
     <!-- /.sidebar -->

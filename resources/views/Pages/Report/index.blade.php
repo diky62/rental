@@ -1,4 +1,4 @@
-@extends('layouts.admin_view')
+@extends('layouts.vendor_view')
 @section('content')
 <!-- Main content -->
     <section class="content">
@@ -37,7 +37,7 @@
                                 <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
                                 </form>
                                 <span data-toggle="modal" data-target="#modalPrint" onclick="print({{$rentals->id}})">
-                                  <a class="btn btn-xs btn-default" data-toggle="tooltip" data-placement="top" title="Cetak Pesanan">
+                                  <a class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Cetak Pesanan">
                                   <i class="fa fa-print"></i>
                                   </a>
                                 </span>

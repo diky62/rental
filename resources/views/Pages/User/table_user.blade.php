@@ -6,7 +6,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data User</h3>
+              <h3 class="box-title">Data Administrator</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">

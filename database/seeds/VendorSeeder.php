@@ -19,7 +19,8 @@ class VendorSeeder extends Seeder
         	'no_rekening'=>'544322229868',
         	'nama_pemilik'=>'Deden',
         	'nama_bank'=>'bni',
-        	'no_hp'=>'083148302377'
+        	'no_hp'=>'083148302377',
+          'status'=>'1'
         ]);
     }
 }

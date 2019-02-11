@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\UsersMobile;
+use App\Vendor;
+use App\Mobil;
+use App\Rental;
 
 class Home2Controller extends Controller
 {
@@ -13,7 +19,10 @@ class Home2Controller extends Controller
      */
     public function index()
     {
-        return view('home2.index');
+      $data["login"] = request()->login ?? "false";
+      $user["users"] = User::get();
+     // dd($data);
+     return view('layouts.vendor_view', $data,$user);
     }
 
     /**
