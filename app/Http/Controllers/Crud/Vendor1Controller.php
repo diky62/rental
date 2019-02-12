@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Crud;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Vendor;
-use App\User;
 
 class Vendor1Controller extends Controller
 {
@@ -20,8 +19,7 @@ class Vendor1Controller extends Controller
     {
       $page = 'Pages.Vendor.newVendor';
       $vendor = Vendor::all();
-      $names = User::all();
-      return view($page)->with(compact('vendor', 'names'));
+      return view($page)->with(compact('vendor'));
     }
 
    public function edit($id)
@@ -33,7 +31,6 @@ class Vendor1Controller extends Controller
    public function update(Request $request, $id)
    {
      $vendor = Vendor::findOrFail($id);
-     $vendor->nama_rental = $request->nama_rental;
      $vendor->alamat = $request->alamat;
      $vendor->no_rekening = $request->no_rekening;
      $vendor->nama_pemilik = $request->nama_pemilik;
@@ -55,7 +52,6 @@ class Vendor1Controller extends Controller
     public function createVendor(Request $request)
       {
           $vendor = new Vendor();
-          $vendor->users_id = $request->input('name');
           $vendor->nama_rental = $request->input('nama_rental');
           $vendor->alamat = $request->input('alamat');
           $vendor->no_rekening = $request->input('no_rekening');
