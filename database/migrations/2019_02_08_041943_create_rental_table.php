@@ -18,8 +18,8 @@ class CreateRentalTable extends Migration
          $table->increments('id');
          $table->integer('users_mobile_id')->unsigned();
          $table->integer('mobil_id')->unsigned();
-         $table->string('tanggal_rental');
-         $table->string('tanggal_kembali');
+         $table->date('tanggal_rental');
+         $table->date('tanggal_kembali');
          $table->integer('harga_sewa');
          $table->string('status');
          $table->timestamps();

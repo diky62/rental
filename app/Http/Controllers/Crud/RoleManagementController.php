@@ -107,10 +107,10 @@ class RoleManagementController extends Controller
   //     return redirect()->route('superadmin.role.edit');
   //  }
   //
-  public function destroy($id){
-    $delete = Roles::find($id)->delete();
-    return !$delete
-            ? redirect()->back()->with('warning', 'Gagal hapus data')->withInput($request->all())
-            : redirect()->route('role.index')->with('success', 'Berhasil hapus data');
-    }
+  // public function destroy($id){
+  //   $delete = Roles::find($id)->delete();
+  //   return !$delete
+  //           ? redirect()->back()->with('warning', 'Gagal hapus data')->withInput($request->all())
+  //           : redirect()->route('role.index')->with('success', 'Berhasil hapus data');
+  //   }
 }

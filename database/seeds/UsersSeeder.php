@@ -37,5 +37,18 @@ class UsersSeeder extends Seeder
           'password' => bcrypt('vendor'),
           'no_hp' => '083148302377'
       ]);
+
+      DB::table('users')->insert([
+          'name' => 'Vendor',
+          'nik' => 12345670,
+          'provinsi_id' => 32,
+          'kabupaten_id' => 3212,
+          'kecamatan_id' => 3212170,
+          'alamat' => 'Indramayu',
+          'email' => 'vendor1@proyek.com',
+          'roles_id' => 2,
+          'password' => bcrypt('vendor1'),
+          'no_hp' => '083148302379'
+      ]);
     }
 }

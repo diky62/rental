@@ -67,7 +67,7 @@ Route::group(['namespace' => 'Auth'], function () {
     //Route::post('role/new', 'RoleManagementController@save')->name('role.save');
     //Route::get('role/update/{id}', 'RoleManagementController@edit')->name('role.edit');
     //Route::post('role/update/{id}', 'RoleManagementController@UpdateRole')->name('role.update');
-    Route::delete('role/{id}', 'RoleManagementController@destroy')->name('role.delete');
+    //Route::delete('role/{id}', 'RoleManagementController@destroy')->name('role.delete');
 
     //VENDOR
     Route::get('vendor', 'VendorController@index')->name('vendor.index');
