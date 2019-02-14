@@ -58,8 +58,7 @@
       <div class="row form-group">
         <div class="col col-md-2"><label for="text-input" class="form-control-label">Tanggal Pinjam</label></div>
           <div class="col-12 col-md-9">
-            <input type="text" id="tgl_pinjam" name="tgl_pinjam"" class="form-control">
-            <input type="hidden" id="tgl_pinjam" name="tgl_pinjam"" class="form-control">
+            <input type="date" id="tgl_pinjam" name="tgl_pinjam"" class="form-control">
           </div>
       </div>
       <div class="row form-group">
@@ -67,7 +66,7 @@
           <div class="col-12 col-md-9"><input type="date" id="tgl_kembali" name="tgl_kembali"" class="form-control"></div>
       </div>
    
-       <a href="{{route('/homeuser.show')}}" type="button" class="btn btn-info center-block btn-block"><i class="fa fa-zoom"></i> Cari</a>
+       <button type="submit" class="btn btn-info center-block btn-block"><i class="fa fa-zoom"></i> Cari</button> 
     </form>
   </div>
 

@@ -14,7 +14,7 @@
             
             <div class="form-group">
               <label>Nama Mobil </label>
-              <input type="text" class="form-control col-12 col-md-9" value="" readonly="true" name="nama_mobil" value="" placeholder="type something" required> 
+              <input type="text" class="form-control col-12 col-md-9" value="{{$stock->mobil->nama_mobil}}" readonly="true" name="nama_mobil" value="" placeholder="type something" required> 
             </div> 
             <div class="form-group">
               <label>Tanggal Pinjam </label>

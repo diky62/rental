@@ -25,9 +25,11 @@ class HomeUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        // $a = $request['tgl_pinjam'];
+        $data['stok'] = Stok::with('mobil')->find($id);
+        return view('user/home.rent',$data);
     }
 
     /**
@@ -51,12 +53,14 @@ class HomeUserController extends Controller
     {
         // $data['mobil'] = Mobil::where()->get();
         // dd($data);
-        return view('user/home.rent');
+        
     }
 
     public function show(Request $request)
     {
-        $data['stok'] = Stok::with('mobil')->where('tanggal','=','2019-02-15')->where('status',0)->get();
+        $a = $request['tgl_pinjam'];
+        // dd($a);
+        $data['stok'] = Stok::with('mobil')->where('tanggal','=',$a)->where('status',0)->get();
         // dd($data);
         return view('user/home.show', $data);
     }

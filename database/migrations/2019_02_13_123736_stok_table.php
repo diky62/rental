@@ -17,7 +17,7 @@ class StokTable extends Migration
          $table->engine = "InnoDB";
          $table->increments('id');
          $table->integer('mobil_id')->unsigned();
-         $table->varchar('tanggal');
+         $table->date('tanggal');
          $table->string('status');
 
          $table->foreign('mobil_id')->references('id')->on('mobil')->onDelete('cascade')->onUpdate('cascade');

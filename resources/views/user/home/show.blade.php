@@ -28,7 +28,7 @@
               </div>
                 <div class="col-xs-12">
                   <div class="form-group">
-                    <a href="{{route('/homeuser.rent')}}" type="button" class="btn btn-info center-block btn-block"><i class="fa fa-pencil"></i> Pesan</a>
+                    <a href="{{route('/homeuser.create',$stoks->id) }}"><button type="submit" class="btn btn-info center-block btn-block"><i class="fa fa-edit"> Pesan</i></button></a>
                   </div>
                 
                 </div>
