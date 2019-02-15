@@ -16,6 +16,7 @@ class CreateVendorTable extends Migration
         Schema::create('vendor', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->increments('id');
+            $table->integer('users_id')->unsigned();
             $table->string('nama_rental');
             $table->string('alamat');
             $table->string('no_rekening');
@@ -25,6 +26,7 @@ class CreateVendorTable extends Migration
             $table->string('status')->nullable();
             $table->timestamps();
 
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

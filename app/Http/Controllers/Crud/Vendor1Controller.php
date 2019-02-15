@@ -4,22 +4,26 @@ namespace App\Http\Controllers\Crud;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Vendor;
+use App\User;
 
 class Vendor1Controller extends Controller
 {
     public function index1()
     {
     	$page = 'Pages.Vendor.vendor1';
-      $vendor = Vendor::all();
-      return view($page)->with(compact('vendor'));
+      $vendor["vendor"] = Vendor::with('users')->where('users_id', Auth::user()->id)->get();
+      $name["users"] = User::find(Auth::user()->id);
+      return view($page,$vendor,$name);
     }
 
     public function create()
     {
       $page = 'Pages.Vendor.newVendor';
       $vendor = Vendor::all();
-      return view($page)->with(compact('vendor'));
+      $names = User::all();
+      return view($page)->with(compact('vendor', 'names'));
     }
 
    public function edit($id)
@@ -31,6 +35,7 @@ class Vendor1Controller extends Controller
    public function update(Request $request, $id)
    {
      $vendor = Vendor::findOrFail($id);
+     $vendor->nama_rental = $request->nama_rental;
      $vendor->alamat = $request->alamat;
      $vendor->no_rekening = $request->no_rekening;
      $vendor->nama_pemilik = $request->nama_pemilik;
@@ -52,6 +57,7 @@ class Vendor1Controller extends Controller
     public function createVendor(Request $request)
       {
           $vendor = new Vendor();
+          $vendor->users_id = $request->input('name');
           $vendor->nama_rental = $request->input('nama_rental');
           $vendor->alamat = $request->input('alamat');
           $vendor->no_rekening = $request->input('no_rekening');

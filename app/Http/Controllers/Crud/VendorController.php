@@ -27,7 +27,6 @@ class VendorController extends Controller
           if($vendorStatus->status == 0 || null){
             $vendorStatus->status = $request->status = 1;
             $vendorStatus->save();
-           // dd($jadwalStatus);
            return redirect()->route('vendor.index');
           }
           else {

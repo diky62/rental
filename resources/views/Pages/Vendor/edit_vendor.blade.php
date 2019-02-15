@@ -12,6 +12,10 @@
               <div class="box-body">
                 <form action="{{route('vendor.update', $vendor->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                         {{ csrf_field() }}
+                        <div class="row form-group">
+              <div class="col col-md-2"><label for="text-input" class="form-control-label">ID User</label></div>
+                <div class="col-12 col-md-10"><input type="text" id="name" name="name" class="form-control" value="{{ $vendor->Users->name }}" disabled></div>
+                </div>
                 <div class="row form-group">
                   <div class="col col-md-2"><label for="text-input" class="form-control-label">Nama Rental</label></div>
                     <div class="col-12 col-md-10"><input type="text" id="nama_rental" name="nama_rental" class="form-control" value="{{ $vendor->nama_rental }}"></div>

@@ -4,16 +4,18 @@ namespace App\Http\Controllers\Crud;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Mobil;
 use App\Vendor;
+use App\User;
 
 class MobilController extends Controller
 {
     public function index()
     {
     	$page = 'Pages.Vendor.index';
-      $data = Mobil::all();
-      return view($page)->with(compact('data'));
+      $mobil["mobil"] = Mobil::with('vendor')->where('vendor_id', Auth::user()->id)->get();
+      return view($page)->with(compact('mobil'));
     }
 
     public function create()
