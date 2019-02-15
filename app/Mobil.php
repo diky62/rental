@@ -15,4 +15,7 @@ class Mobil extends Model
      public function rental(){
         return $this->hasOne("App\Rental");
     }
+    public function users(){
+    return $this->belongsTo("App\User");
+  }
 }
