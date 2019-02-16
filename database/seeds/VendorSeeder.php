@@ -13,7 +13,6 @@ class VendorSeeder extends Seeder
     public function run()
      {
         DB::table('vendor')->insert([
-        	'users_id'=>1,
         	'nama_rental'=>'Deden Rental',
         	'alamat'=>'Juntikebon',
         	'no_rekening'=>'544322229868',

@@ -12,17 +12,6 @@
               <div class="box-body">
                 <form action="{{route('vendor.tambahVendor')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                         {{ csrf_field() }}
-                        <div class="row form-group">
-                                    <div class="col col-md-2"><label for="select" class=" form-control-label">Nama</label></div>
-                                    <div class="col-12 col-md-10">
-                                      <select name="name" id="name" data-placeholder="Please select..." class="standardSelect" tabindex="1">
-                                        <option value=""></option>
-                                        @foreach($names as $name)
-                                        <option value="{{$name->id}}">{{$name->name}}</option>
-                                        @endforeach
-                                      </select>
-                                    </div>
-                                  </div>
                 <div class="row form-group">
                   <div class="col col-md-2"><label for="text-input" class="form-control-label">Nama Rental</label></div>
                     <div class="col-12 col-md-10"><input type="text" id="nama_rental" name="nama_rental" placeholder="Nama Rental" class="form-control"></div>

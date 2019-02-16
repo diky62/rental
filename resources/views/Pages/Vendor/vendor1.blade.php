@@ -18,7 +18,6 @@
                 <tr>
                   <th>No</th>
                   <th>Aksi</th>
-                  <th>Nama</th>
                   <th>Nama Rental</th>
                   <th>Alamat</th>
                   <th>No Rekening</th>
@@ -35,7 +34,6 @@
                         <td>
                               <center><a href="{{route('vendor.edit', [$vendors]) }}"><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
                             </td>
-                        <td>{{$vendors->Users->name}}</td>
                         <td>{{$vendors->nama_rental}}</td>
                         <td>{{$vendors->alamat}}</td>
                         <td>{{$vendors->no_rekening}}</td>

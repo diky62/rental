@@ -18,7 +18,6 @@
                 <tr>
                   <th>No</th>
                   <th>Aksi</th>
-                  <th>Nama</th>
                   <th>Nama Rental</th>
                   <th>Alamat</th>
                   <th>No Rekening</th>
@@ -40,7 +39,6 @@
                               <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
                               </form>
                             </td>
-                        <td>{{$vendors->Users->name}}</td>
                         <td>{{$vendors->nama_rental}}</td>
                         <td>{{$vendors->alamat}}</td>
                         <td>{{$vendors->no_rekening}}</td>

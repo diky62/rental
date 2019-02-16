@@ -14,7 +14,6 @@
                 <thead>
                 <tr>
                   <th>No</th>
-                  <th>Aksi</th>
                   <th>Nama</th>
                   <th>Level</th>
                 </tr>
@@ -24,12 +23,6 @@
                   @php $no = 1; @endphp
                       @foreach($role as $roles)
                         <td>{{$no++}}</td>
-                        <td>
-                              <form action="{{ route('role.delete', $roles->id) }}" method="post" style="display: inline-block">
-                                {{ csrf_field() }}
-                              <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
-                              </form>
-                            </td>
                         <td>{{$roles->name}}</td>
                         <td>{{$roles->level}}</td>
                         </form>

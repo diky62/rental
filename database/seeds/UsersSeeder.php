@@ -49,6 +49,7 @@ class UsersSeeder extends Seeder
           'roles_id' => 3,
           'password' => bcrypt('user'),
           'no_hp' => '083148302377'
+
       ]);
     }
 }
