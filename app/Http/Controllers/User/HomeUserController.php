@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DateTime;
 use App\Stok;
 use App\Mobil;
 
@@ -25,11 +26,18 @@ class HomeUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create(Request $request, $id )
     {
         // $a = $request['tgl_pinjam'];
+        $a = $request['tgl_pinjam'];
+        $b = $request['tgl_kembali'];
+        $datetime1 = new DateTime("$b");
+        $datetime2 = new DateTime("$a");
+        $interval = $datetime1->diff($datetime2);
+        // dd($interval->days);
+
         $data['stok'] = Stok::with('mobil')->find($id);
-        return view('user/home.rent',$data);
+        return view('user/home.rent',$data, ['a' => $a, 'b' => $b, 'interval' => $interval]);
     }
 
     /**
@@ -59,10 +67,11 @@ class HomeUserController extends Controller
     public function show(Request $request)
     {
         $a = $request['tgl_pinjam'];
+        $b = $request['tgl_pinjam'];
         // dd($a);
         $data['stok'] = Stok::with('mobil')->where('tanggal','=',$a)->where('status',0)->get();
         // dd($data);
-        return view('user/home.show', $data);
+        return view('user/home.show', $data, ['a' => $a, 'b' => $b]);
     }
 
     /**

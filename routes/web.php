@@ -137,7 +137,7 @@ Route::group(['middleware'=>'role:3'],function(){
   	]);
 
   	Route::post('/homeuser/show','User\HomeUserController@show')->name('/homeuser.show');
-  	Route::get('/homeuser/create','User\HomeUserController@create')->name('/homeuser.create');
+  	Route::post('/homeuser/create/{id}','User\HomeUserController@create')->name('/homeuser.create');
 
 
 });

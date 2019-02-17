@@ -14,23 +14,23 @@
             
             <div class="form-group">
               <label>Nama Mobil </label>
-              <input type="text" class="form-control col-12 col-md-9" value="{{$stock->mobil->nama_mobil}}" readonly="true" name="nama_mobil" value="" placeholder="type something" required> 
+              <input type="text" class="form-control col-12 col-md-9" value="{{$stok->mobil->nama_mobil}}" readonly="true" name="nama_mobil" value="" placeholder="type something" required> 
             </div> 
             <div class="form-group">
               <label>Tanggal Pinjam </label>
-              <input type="text" class="form-control col-12 col-md-9" value="" readonly="true" name="tgl_pinjam" value="" placeholder="type something" required> 
+              <input type="text" class="form-control col-12 col-md-9" value="{{ $a }}" readonly="true" name="tgl_pinjam" value="" placeholder="type something" required> 
             </div> 
             <div class="form-group">
               <label>Tanggal Kembali </label>
-              <input type="text" class="form-control col-12 col-md-9" value="" readonly="true" name="tgl_kembali" value="" placeholder="type something" required> 
-            </div> 
+              <input type="text" class="form-control col-12 col-md-9" value="{{ $b }}" readonly="true" name="tgl_kembali" value="" placeholder="type something" required> 
+            </div>
             <div class="form-group">
               <label>Lama </label>
-              <input type="text" class="form-control col-12 col-md-9" value="" readonly="true" name="lama" value="" placeholder="type something" required> 
+              <input type="text" class="form-control col-12 col-md-9" value="" readonly="true" name="lama" value="{{$interval->days}}" placeholder="type something" required> 
             </div> 
             <div class="form-group">
               <label>Harga</label>
-                <input type="text" class="form-control col-12 col-md-9" value="" readonly="true" name="harga" placeholder="type something" required> 
+                <input type="text" class="form-control col-12 col-md-9" value="{{$stok->mobil->harga}}" readonly="true" name="harga" placeholder="type something" required> 
             </div>
              <div class="form-group">
               <label>Total</label>
