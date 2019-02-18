@@ -23,6 +23,9 @@ Route::get('check',function(){
 		case '2':
 			return redirect('/home2?login=true');
 			break;
+		case '3':
+			return redirect('/homeuser?login=true');
+			break;
 
 		default:
 			# code...
@@ -32,6 +35,12 @@ Route::get('check',function(){
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
+        Route::get('daftar','Crud/Register1Controller@index')->name('daftar');
+        Route::get('daftar','Crud/Register1Controller@store')->name('daftar');
+Route::resources([
+          "daftar"=>"Register1Controller"
+              ]);
 
 
 Route::group(['middleware'=>'auth'],function(){
@@ -39,7 +48,6 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/home1','home1Controller@index')->name('home1');
 
 Route::group(['namespace' => 'Auth'], function () {
-  Route::get('logout', 'LoginController@logout')->name('logout');
 });
 
         Route::get('/home', 'HomeController@index')->name('home');
@@ -111,6 +119,8 @@ Route::group(['middleware'=>'role:2'],function(){
 	      // Route::post('vendor/hapusvendor/{id}', 'VendorController@destroy')->name('vendor.delete');
 	      Route::get('vendor/editvendor/{id}', 'Vendor1Controller@edit')->name('vendor.edit');
 	      Route::post('vendor/editvendor/{id}', 'Vendor1Controller@update')->name('vendor.update');
+
+	      //Data Available
 	      // Route::post('vendor/status/{id}', 'Vendor1Controller@vendorStatus')->name('vendor.status');
 
 				//DATA PELANGGAN
@@ -127,6 +137,22 @@ Route::group(['middleware'=>'role:2'],function(){
 				Route::post('stok_mobil/status/{id}', 'StokMobilController@StokMobilStatus')->name('stok_mobil.status');
 			});
 		});
+
+Route::group(['middleware'=>'role:3'],function(){
+	// Route::get('/homeuser','User\HomeUserController@index')->name('homeuser');
+	Route::resources([
+		"/homeuser"=>"User\HomeUserController",
+	  	"profil"=>"User\ProfilController",
+	  	"reservasi"=>"ReservasiController",
+	  	"history"=>"User\HistoryController",
+	  
+  	]);
+
+  	Route::post('/homeuser/show','User\HomeUserController@show')->name('/homeuser.show');
+  	Route::post('/homeuser/create/{id}','User\HomeUserController@create')->name('/homeuser.create');
+
+
+});
 
 
 // Route::get('/home', 'HomeController@index')->name('home');

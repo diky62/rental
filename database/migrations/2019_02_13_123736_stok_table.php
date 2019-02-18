@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRentalTable extends Migration
+class StokTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,16 @@ class CreateRentalTable extends Migration
      */
     public function up()
     {
-        Schema::create('rental', function (Blueprint $table) {
+         Schema::create('stok', function (Blueprint $table) {
          $table->engine = "InnoDB";
          $table->increments('id');
-         $table->integer('users_id')->unsigned();
          $table->integer('mobil_id')->unsigned();
-         $table->date('tanggal_rental');
-         $table->date('tanggal_kembali');
-         $table->integer('harga_sewa');
+         $table->date('tanggal');
          $table->string('status');
-         $table->timestamps();
-         $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+
          $table->foreign('mobil_id')->references('id')->on('mobil')->onDelete('cascade')->onUpdate('cascade');
-        });
+         });
+
     }
 
     /**
@@ -35,6 +32,6 @@ class CreateRentalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rental');
+        Schema::dropIfExists('stok');
     }
 }
