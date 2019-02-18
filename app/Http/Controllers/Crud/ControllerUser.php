@@ -16,10 +16,11 @@ class ControllerUser extends Controller
     {
     	$page = 'Pages.User.table_user';
       $user = User::all();
+      $role = Roles::all();
       $provinsi = Provinsi::all();
       $kabupaten = Kabupaten::all();
       $kecamatan = Kecamatan::all();
-      return view($page)->with(compact('user', 'provinsi', 'kabupaten', 'kecamatan'));
+      return view($page)->with(compact('user', 'role', 'provinsi', 'kabupaten', 'kecamatan'));
     }
     // public function newUser()
     //   {

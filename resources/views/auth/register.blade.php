@@ -105,19 +105,19 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                         <div class="form-group row">
                             <label for="roles_id" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}
                             </label>
 
                             <div class="col-md-6">
                                 <select class="form-control" name="roles_id" id="roles_id">
-                                    @foreach($roles as $role)
-                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
-                                    @endforeach 
+                                    <option>-- Pillih Hak Akses --</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">Vendor</option>
+                                    <option value="3">User</option>
                                 </select>
                             </div>
                         </div>
-
                        
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>

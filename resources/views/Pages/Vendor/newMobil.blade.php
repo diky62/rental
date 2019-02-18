@@ -1,4 +1,4 @@
-@extends('layouts.admin_view')
+@extends('layouts.vendor_view')
 @section('content')
 <div class="col-md-12">
           <!-- Horizontal Form -->
@@ -12,6 +12,17 @@
               <div class="box-body">
                 <form action="{{route('mobil.tambahmobil')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                         {{ csrf_field() }}
+                        <div class="row form-group">
+                                    <div class="col col-md-2"><label for="select" class=" form-control-label">Nama</label></div>
+                                    <div class="col-12 col-md-10">
+                                      <select name="name" id="name" data-placeholder="Please select..." class="standardSelect" tabindex="1">
+                                        <option value=""></option>
+                                        @foreach($name as $names)
+                                        <option value="{{$names->id}}">{{$names->name}}</option>
+                                        @endforeach
+                                      </select>
+                                    </div>
+                                  </div>
                         <div class="row form-group">
                                     <div class="col col-md-2"><label for="select" class=" form-control-label">Nama Rental</label></div>
                                     <div class="col-12 col-md-10">

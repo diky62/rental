@@ -1,4 +1,4 @@
-@extends('layouts.admin_view')
+@extends('layouts.vendor_view')
 @section('content')
 <div class="col-md-12">
           <!-- Horizontal Form -->
@@ -89,7 +89,7 @@
                         <button type="reset" class="btn btn-success btn-sm">
                           <i class="fa fa-ban"></i> Reset
                         </button>
-                        <a href="{{route('vendor.index')}}">
+                        <a href="{{route('vendor.index1')}}">
                         <button type="button" class="btn btn-danger btn-sm">
                           <i class="fa fa-close"></i> Cancel
                         </button></a>

@@ -1,4 +1,4 @@
-@extends('layouts.admin_view')
+@extends('layouts.vendor_view')
 @section('content')
 <!-- Main content -->
     <section class="content">
@@ -18,7 +18,7 @@
                 <tr>
                   <th>No</th>
                   <th>Aksi</th>
-                  <th>ID Vendor</th>
+                  <th>Nama Rental</th>
                   <th>Nama Mobil</th>
                   <th>No Polisi</th>
                   <th>Warna</th>
@@ -32,24 +32,24 @@
                 <tbody>
                 <tr>
                   @php $no = 1; @endphp
-                      @foreach($data as $datas)
+                      @foreach($mobil as $mobils)
                         <td>{{$no++}}</td>
                         <td>
-                              <center><a href="{{route('mobil.edit', [$datas]) }}"><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
-                              <form action="{{ route('mobil.delete', $datas->id) }}" method="post" style="display: inline-block">
+                              <center><a href="{{route('mobil.edit', [$mobils->id]) }}"><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
+                              <form action="{{ route('mobil.delete', $mobils->id) }}" method="post" style="display: inline-block">
                                 {{ csrf_field() }}
                               <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
                               </form>
                             </td>
-                        <td>{{$datas->Vendor->nama_rental}}</td>
-                        <td>{{$datas->nama_mobil}}</td>
-                        <td>{{$datas->no_polisi}}</td>
-                        <td>{{$datas->warna}}</td>
-                        <td>{{$datas->transmisi}}</td>
-                        <td>{{$datas->jumlah_penumpang}}</td>
-                        <td>{{$datas->harga}}</td>
-                        <td>{{$datas->keterangan}}</td>
-                        <td><img src="{{ url('uploads/gambar/'.$datas->gambar) }}" style="width: 75px; height: 75px;"></td>
+                        <td>{{$mobils->Vendor->nama_rental}}</td>
+                        <td>{{$mobils->nama_mobil}}</td>
+                        <td>{{$mobils->no_polisi}}</td>
+                        <td>{{$mobils->warna}}</td>
+                        <td>{{$mobils->transmisi}}</td>
+                        <td>{{$mobils->jumlah_penumpang}}</td>
+                        <td>{{$mobils->harga}}</td>
+                        <td>{{$mobils->keterangan}}</td>
+                        <td><img src="{{ url('uploads/gambar/'.$mobils->gambar) }}" style="width: 75px; height: 75px;"></td>
                 </tr>
                   @endforeach
                 </tfoot>

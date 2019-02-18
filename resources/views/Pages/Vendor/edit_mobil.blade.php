@@ -1,4 +1,4 @@
-@extends('layouts.admin_view')
+@extends('layouts.vendor_view')
 @section('content')
 <div class="col-md-12">
           <!-- Horizontal Form -->

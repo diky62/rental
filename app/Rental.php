@@ -9,7 +9,7 @@ class Rental extends Model
     protected $table = "rental";
     protected $guarded = ["id"];
 
-    public function users(){
+    public function User(){
     	return $this->belongsTo("App\User");
     }
      public function mobil(){
