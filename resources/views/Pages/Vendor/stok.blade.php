@@ -28,7 +28,6 @@
                       @foreach($stok as $stoks)
                         <td>{{$no++}}</td>
                         <td>
-                          <center><a href="{{route('stok_mobil.edit', [$stoks->id]) }}"><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
                               <form action="{{ route('stok_mobil.delete', $stoks->id) }}" method="post" style="display: inline-block">
                                 {{ csrf_field() }}
                               <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
@@ -39,9 +38,9 @@
                         <td><form action="{{route('stok_mobil.status', $stoks->id)}}" method="post">
                             {{csrf_field()}}
                           @if ($stoks->status == 0)
-                            <button type="link" onClick="return confirm('mobil belum diaktifkan?');" value="0" class="btn btn-primary btn-sm">True</i></button>
+                            <button type="link" onClick="return confirm('mobil belum diaktifkan?');" value="0" class="btn btn-primary btn-sm">Tersedia</i></button>
                           @else
-                            <button type="link" onClick="return confirm('mobil sudah diaktifkan?');" value="1" class="btn btn-success btn-sm">False</i></button>
+                            <button type="link" onClick="return confirm('mobil sudah diaktifkan?');" value="1" class="btn btn-success btn-sm">Tidak Tersedia</i></button>
                           @endif
                         </form>
                         </td>

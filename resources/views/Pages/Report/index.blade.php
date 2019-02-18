@@ -42,7 +42,7 @@
                                   </a>
                                 </span>
                               </td>
-                          <td>{{$rentals->UsersMobile->name}}</td>
+                          <td>{{$rentals->User->name}}</td>
                           <td>{{$rentals->Mobil->nama_mobil}}</td>
                           <td>{{$rentals->tanggal_rental}}</td>
                           <td>{{$rentals->tanggal_kembali}}</td>

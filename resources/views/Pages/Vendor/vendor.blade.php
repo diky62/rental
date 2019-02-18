@@ -48,9 +48,9 @@
                         <td><form action="{{route('vendor.status', $vendors->id)}}" method="post">
                             {{csrf_field()}}
                           @if ($vendors->status == 0)
-                            <button type="link" onClick="return confirm('apakah vendor akan dinonaktifkan?');" value="0" class="btn btn-primary btn-sm">True</i></button>
+                            <button type="link" onClick="return confirm('apakah vendor akan dinonaktifkan?');" value="0" class="btn btn-primary btn-sm">Aktif</i></button>
                           @else
-                            <button type="link" onClick="return confirm('apakah vendor akan diaktifkan?');" value="1" class="btn btn-success btn-sm">False</i></button>
+                            <button type="link" onClick="return confirm('apakah vendor akan diaktifkan?');" value="1" class="btn btn-success btn-sm">Nonaktif</i></button>
                           @endif
                         </form>
                         </td>
