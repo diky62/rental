@@ -143,6 +143,7 @@
           <ul class="treeview-menu">
             <li><a href="{{ route('mobil.index') }}"><i class="fa fa-circle-o"></i>Data Mobil</a></li>
             <li><a href="{{ route('vendor.index1') }}"><i class="fa fa-circle-o"></i>Data Vendor</a></li>
+            <li><a href="{{ route('stok.mobil')}}"><i class="fa fa-circle-o"></i>Stok Mobil</a></li>
           </ul>
         </li>
 

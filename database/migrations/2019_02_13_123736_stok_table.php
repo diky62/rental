@@ -19,6 +19,7 @@ class StokTable extends Migration
          $table->integer('mobil_id')->unsigned();
          $table->date('tanggal');
          $table->string('status');
+         $table->timestamps();
 
          $table->foreign('mobil_id')->references('id')->on('mobil')->onDelete('cascade')->onUpdate('cascade');
          });
