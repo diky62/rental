@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
 use App\User;
 use App\Roles;
 use App\Provinsi;
@@ -22,14 +23,33 @@ class Register1Controller extends Controller
      */
     public function index()
     {
-        $data["roles"] = Roles::get();
         $data["provinsi"] = Provinsi::get();
         $data["kabupaten"] = Kabupaten::get();
         $data["kecamatan"] = Kecamatan::get();
+        $data["roles"] = Roles::get();
         return view('auth.register',$data);
-        
     }
+      
+        
+    // }
+    // public function index(){
+    //     $page = 'auth.register';
+    //     $provinsi = Provinsi::all();
+    //     $roles = Roles::get();
+    //     return view($page)->with(compact('provinsi', 'roles'));
+    // }
 
+    // public function kabupaten(){
+    //   $provinsi_id = Input::get('provinsi_id');
+    //   $kabupaten = Kabupaten::where('provinsi_id', '=', $provinsi_id)->get();
+    //   return response()->json($kabupaten);
+    // }
+
+    // public function kecamatan(){
+    //   $kabupaten_id = Input::get('kabupaten_id');
+    //   $kecamatan = Kecamatan::where('kabupaten_id', '=', $kabupaten_id)->get();
+    //   return response()->json($kecamatan);
+    // }
    
 
     /**
@@ -53,13 +73,15 @@ class Register1Controller extends Controller
         $data['user']=User::create([
             'name' => $request['name'],
             'nik' => $request['nik'],
+            'provinsi_id' => $request['provinsi_id'],
+            'kabupaten_id' => $request['kabupaten_id'],
+            'kecamatan_id' => $request['kecamatan_id'],
             'alamat'=> $request['alamat'],
             'email' => $request['email'],
             'roles_id'=> $request['roles_id'],
             'password' => bcrypt($request['password'])
             
         ]);
-        // dd($data['user']);
         return redirect('login');
     }
 
