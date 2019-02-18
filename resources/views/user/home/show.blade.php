@@ -20,6 +20,7 @@
                   </p>
                   <p align="center"> 
                     <label>Rp.{{ $stoks->mobil->harga }} /Hari</label>
+                    <input type="hidden" id="harga" name="harga" class="form-control" style="border: none;" value="{{ $stoks->mobil->harga }}">
                   </p>
                   <div class="col-xs-4">
                     <i class="fa fa-gear"></i> <label> {{ $stoks->mobil->transmisi }}</label>

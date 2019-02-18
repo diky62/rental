@@ -20,6 +20,7 @@ class CreateRentalTable extends Migration
          $table->integer('mobil_id')->unsigned();
          $table->date('tanggal_rental');
          $table->date('tanggal_kembali');
+         $table->integer('lama_pinjam');
          $table->integer('harga_sewa');
          $table->string('status');
          $table->timestamps();

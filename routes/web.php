@@ -141,6 +141,10 @@ Route::group(['middleware'=>'role:3'],function(){
 
   	Route::post('/homeuser/show','User\HomeUserController@show')->name('/homeuser.show');
   	Route::post('/homeuser/create/{id}','User\HomeUserController@create')->name('/homeuser.create');
+  	Route::post('/homeuser/store','User\HomeUserController@store')->name('/homeuser.store');
+  	Route::post('/homeuser/rent','User\HomeUserController@rent')->name('/homeuser.rent');
+
+
 
 
 });

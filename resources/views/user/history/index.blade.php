@@ -37,6 +37,15 @@
                 <div class="col-xs-4">
                   <i class="fa fa-info"></i> <label> {{ $rentals->status }}</label>
                 </div>
+                <div class="col-xs-4">
+                  <i class="fa fa-info"></i> <label> {{ $rentals->mobil->vendor->nama_rental }}</label>
+                </div>
+                <div class="col-xs-4">
+                  <i class="fa fa-dollar"></i> <label> {{ $rentals->mobil->vendor->no_rekening }}</label>
+                </div>
+                <div class="col-xs-4">
+                  <i class="fa fa-info"></i> <label> {{ $rentals->mobil->vendor->nama_bank }}</label>
+                </div>
               </div>
                 
                 

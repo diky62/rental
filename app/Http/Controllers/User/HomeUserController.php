@@ -4,9 +4,12 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use DateTime;
 use App\Stok;
 use App\Mobil;
+use App\User;
+use App\Rental;
 
 
 class HomeUserController extends Controller
@@ -31,13 +34,18 @@ class HomeUserController extends Controller
         // $a = $request['tgl_pinjam'];
         $a = $request['tgl_pinjam'];
         $b = $request['tgl_kembali'];
+        $harga = $request['harga'];
         $datetime1 = new DateTime("$b");
         $datetime2 = new DateTime("$a");
         $interval = $datetime1->diff($datetime2);
-        // dd($interval->days);
+        $lama = $interval->days;
+        // dd($user);
+        $total=$harga*$lama;
+        // dd($total);
 
         $data['stok'] = Stok::with('mobil')->find($id);
-        return view('user/home.rent',$data, ['a' => $a, 'b' => $b, 'interval' => $interval]);
+        $data ['user'] = User::find(Auth::user()->id);
+        return view('user/home.rent',$data, ['a' => $a, 'b' => $b, 'interval' => $interval, 'total' => $total]);
     }
 
     /**
@@ -48,7 +56,17 @@ class HomeUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $data = new Rental();
+          $data->users_id = $request->input('user_id');
+          $data->mobil_id = $request->input('mobil_id');
+          $data->tanggal_rental = $request->input('tgl_pinjam');
+          $data->tanggal_kembali = $request->input('tgl_kembali');
+          $data->lama_pinjam = $request->input('lama');
+          $data->harga_sewa = $request->input('total');
+          $data->status = $request->input('status');
+          $data->save();
+
+            return redirect('/homeuser');
     }
 
     /**
@@ -59,15 +77,13 @@ class HomeUserController extends Controller
      */
     public function rent()
     {
-        // $data['mobil'] = Mobil::where()->get();
-        // dd($data);
-        
+        return view('user/home.succes');        
     }
 
     public function show(Request $request)
     {
         $a = $request['tgl_pinjam'];
-        $b = $request['tgl_pinjam'];
+        $b = $request['tgl_kembali'];
         // dd($a);
         $data['stok'] = Stok::with('mobil')->where('tanggal','=',$a)->where('status',0)->get();
         // dd($data);
@@ -106,5 +122,10 @@ class HomeUserController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function success()
+    {
+        
+      
     }
 }
