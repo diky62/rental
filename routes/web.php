@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Auth::check() ? redirect('checking') : redirect('login');
 });
 
 Auth::routes();
@@ -20,7 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('home1','home1Controller@index')->name('home1');
 Route::get('daftar','Register1Controller@index')->name('daftar');
-Route::get('daftar','Register1Controller@store')->name('daftar');
+//controller j-son
+
 
 Route::resources([
   "daftar"=>"Register1Controller",
@@ -55,10 +56,7 @@ Route::group(['namespace' => 'Auth'], function () {
       //Route::post('role/update/{id}', 'RoleManagementController@UpdateRole')->name('role.update');
       Route::delete('role/{id}', 'RoleManagementController@destroy')->name('role.delete');
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 540ab24c57632e0625c2c88ba73cadd9cc1ffcd1
       //MANAGEMENT PROFIL
       Route::get('profil', 'ProfilManagementController@index')->name('profil.index');
 

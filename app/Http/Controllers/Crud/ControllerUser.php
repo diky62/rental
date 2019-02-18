@@ -21,7 +21,6 @@ class ControllerUser extends Controller
       $kecamatan = Kecamatan::all();
       return view($page)->with(compact('user', 'provinsi', 'kabupaten', 'kecamatan'));
     }
-
     // public function newUser()
     //   {
     //       $page = 'Pages.User.tambah_user';
