@@ -116,6 +116,15 @@ Route::group(['middleware'=>'role:2'],function(){
 				//DATA PELANGGAN
 				Route::get('datapelanggan', 'UserMobileController@index')->name('user.mobile');
 				Route::post('datapelanggan/hapusdatapelanggan/{id}', 'UserMobileController@destroy')->name('user.mobile.delete');
+
+				//STOK MOBIL
+				Route::get('stok_mobil', 'StokMobilController@index')->name('stok.mobil');
+				Route::get('stok_mobil/new', 'StokMobilController@create')->name('stok_mobil.tambahdata');
+				Route::post('stok_mobil/new_stok_mobil', 'StokMobilController@createStokMobil')->name('stok_mobil.tambahmobil');
+				Route::post('stok_mobil/hapusmobil/{id}', 'StokMobilController@destroy')->name('stok_mobil.delete');
+				Route::get('stok_mobil/editmobil/{id}', 'StokMobilController@edit')->name('stok_mobil.edit');
+				Route::post('stok_mobil/editmobil/{id}', 'StokMobilController@update')->name('stok_mobil.update');
+				Route::post('stok_mobil/status/{id}', 'StokMobilController@StokMobilStatus')->name('stok_mobil.status');
 			});
 		});
 
