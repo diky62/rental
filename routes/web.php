@@ -92,8 +92,11 @@ Route::group(['namespace' => 'Auth'], function () {
 
 Route::group(['middleware'=>'role:2'],function(){
 	Route::get('/home2','home2Controller@index')->name('home2');
+	Route::get('dashboard_vendor','DashboardVendorController@index')->name('dashboard');
 
 	  Route::group(['namespace' => 'Crud'], function () {
+			Route::get('dashboard_vendor','DashboardVendorController@index')->name('dashboard');
+
 	      //MOBIL
 	      Route::get('mobil', 'MobilController@index')->name('mobil.index');
 	  		Route::get('mobil/new', 'MobilController@create')->name('mobil.tambahdata');

@@ -12,4 +12,7 @@ class Vendor extends Model
     public function mobil(){
     	return $this->hasOne("App\Mobil");
     }
+    public function users(){
+    return $this->belongsTo("App\User");
+  }
 }

@@ -32,8 +32,9 @@
                       @foreach($vendor as $vendors)
                         <td>{{$no++}}</td>
                         <td>
-                              <center><a href="{{route('vendor.edit', [$vendors]) }}"><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
+                              <center><a href="{{route('vendor.edit', [$vendors->id]) }}"><button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
                             </td>
+                            <!-- <td>{{$vendors->users->name}}</td> -->
                         <td>{{$vendors->nama_rental}}</td>
                         <td>{{$vendors->alamat}}</td>
                         <td>{{$vendors->no_rekening}}</td>

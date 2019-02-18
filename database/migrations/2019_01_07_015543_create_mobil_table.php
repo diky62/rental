@@ -16,6 +16,7 @@ class CreateMobilTable extends Migration
         Schema::create('mobil', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->increments('id');
+            $table->integer('users_id')->unsigned();
             $table->integer('vendor_id')->unsigned();
             $table->string('nama_mobil');
             $table->string('no_polisi');
@@ -28,6 +29,7 @@ class CreateMobilTable extends Migration
             $table->timestamps();
 
             $table->foreign('vendor_id')->references('id')->on('vendor')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
