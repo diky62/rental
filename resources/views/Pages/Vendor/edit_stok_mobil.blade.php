@@ -10,7 +10,7 @@
             <!-- form start -->
             <!-- <form class="form-horizontal"> -->
               <div class="box-body">
-                <form action="" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                <form action="{{route('stok_mobil.update', $data->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                         {{ csrf_field() }}
                 <div class="row form-group">
                   <div class="col col-md-2"><label for="text-input" class="form-control-label">Nama Mobil</label></div>
@@ -24,14 +24,14 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                        <a href="{{route('mobil.tambahmobil')}}">
+                        <a href="{{route('stok_mobil.tambahmobil')}}">
                         <button type="submit" class="btn btn-primary btn-sm">
                           <i class="fa fa-dot-circle-o"></i> Submit
                         </button>
                         <button type="reset" class="btn btn-success btn-sm">
                           <i class="fa fa-ban"></i> Reset
                         </button>
-                        <a href="{{route('mobil.index')}}">
+                        <a href="{{route('stok.mobil')}}">
                         <button type="button" class="btn btn-danger btn-sm">
                           <i class="fa fa-close"></i> Cancel
                         </button></a>
