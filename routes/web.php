@@ -12,9 +12,7 @@
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
     return Auth::check() ? redirect('checking') : redirect('login');
-=======
 	return view('auth/login');
 });
 
@@ -34,22 +32,17 @@ Route::get('check',function(){
 			# code...
 			break;
 	}
->>>>>>> b660811ec7163268d5f8a861d9877324bef1b443
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-<<<<<<< HEAD
 Route::get('home1','home1Controller@index')->name('home1');
 Route::get('daftar','Register1Controller@index')->name('daftar');
 //controller j-son
 
-
-=======
         Route::get('daftar','Crud/Register1Controller@index')->name('daftar');
         Route::get('daftar','Crud/Register1Controller@store')->name('daftar');
->>>>>>> b660811ec7163268d5f8a861d9877324bef1b443
 Route::resources([
           "daftar"=>"Register1Controller"
               ]);
@@ -165,7 +158,6 @@ Route::group(['middleware'=>'role:3'],function(){
   	Route::post('/homeuser/store','User\HomeUserController@store')->name('/homeuser.store');
   	Route::post('/homeuser/rent','User\HomeUserController@rent')->name('/homeuser.rent');
 
-<<<<<<< HEAD
     //Dashboard User
 
     Route::resources([
@@ -173,7 +165,7 @@ Route::group(['middleware'=>'role:3'],function(){
     "history"=>"HistoriPesananController"
   ]);
 
-    
+
 
 
       //ROLE MANAGEMENT
@@ -193,7 +185,7 @@ Route::group(['middleware'=>'role:3'],function(){
 
       //MANAGEMENT RESERVASI (USER)
       Route::get('reservasi', 'ReservasiManagementController@index')->name('reservasi.index');
- 
+
 
       //USER WEB MANAGEMENT
       Route::get('user', 'ControllerUser@data')->name('user.data');
@@ -223,11 +215,5 @@ Route::group(['middleware'=>'role:3'],function(){
       Route::post('vendor/hapusvendor/{id}', 'VendorController@destroy')->name('vendor.delete');
       Route::get('vendor/editvendor/{id}', 'VendorController@edit')->name('vendor.edit');
       Route::post('vendor/editvendor/{id}', 'VendorController@update')->name('vendor.update');
-    });
-;
-=======
-
-
 
 });
->>>>>>> b660811ec7163268d5f8a861d9877324bef1b443
