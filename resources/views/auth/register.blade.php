@@ -10,7 +10,6 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('daftar.store') }}" >
                         @csrf
-
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nama') }}</label>
 
@@ -38,7 +37,45 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="provinsi" class="col-md-4 col-form-label text-md-right">{{ __('Provinsi') }}
+                            </label>
+                            <div class="col-md-6">
+                                <select class="form-control" name="provinsi_id" id="provinsi_id">
+                                    <option value="0" disabled="true" selected="true">Pilih Provinsi</option>
+                                    @foreach($provinsi as $provinsi)
+                                    <option value="{{ $provinsi->id }}">{{ $provinsi->nama_provinsi }}</option>
+                                    @endforeach 
+                                </select>
+                            </div>
+                        </div>
 
+                        <div class="form-group row">
+                            <label for="kabupaten" class="col-md-4 col-form-label text-md-right">{{ __('Kabupaten') }}
+                            </label>
+                            <div class="col-md-6">
+                                <select class="form-control" name="kabupaten" id="kabupaten">
+                                    <option value="0" disabled="true" selected="true">Pilih Kabupaten</option>
+                                     @foreach($kabupaten as $kabupaten)
+                                    <option value="{{ $kabupaten->id }}">{{ $kabupaten->nama_kabupaten }}</option>
+                                    @endforeach 
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="kecamatan" class="col-md-4 col-form-label text-md-right">{{ __('Kecamatan') }}
+                            </label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" name="kecamatan" id="kecamatan">
+                                    <option value="0" disabled="true" selected="true">Pilih Kecamatan</option>
+                                     @foreach($kecamatan as $kecamatan)
+                                    <option value="{{ $kecamatan->id }}">{{ $kecamatan->nama_kecamatan }}</option>
+                                    @endforeach 
+                                </select>
+                            </div>
+                        </div>
                 
                         <div class="form-group row">
                             <label for="alamat" class="col-md-4 col-form-label text-md-right">{{ __('Alamat') }}</label>
@@ -118,3 +155,43 @@
     </div>
 </div>
 @endsection
+
+@section('script')
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+      $('#provinsi').on('change', function(e){
+        console.log(e);
+        var provinsi_id = e.target.value;
+        $.get('/json-kabupaten?provinsi_id=' + provinsi_id,function(data) {
+          console.log(data);
+          $('#kabupaten').empty();
+          $('#kabupaten').append('<option value="0" disabled="true" selected="true">Pilih Kabupaten</option>');
+
+          $('#kecamatan').empty();
+          $('#kecamatan').append('<option value="0" disabled="true" selected="true">Pilih Kecamatan</option>');
+
+          $.each(data, function(index, kabupatenObj){
+            $('#kabupaten').append('<option value="'+ kabupatenObj.id +'">'+ kabupatenObj.name +'</option>');
+          })
+        });
+      });
+
+      $('#kabupaten').on('change', function(e){
+        console.log(e);
+        var kabupaten_id = e.target.value;
+        $.get('/json-kecamatan?kabupaten_id=' + kabupaten_id,function(data) {
+          console.log(data);
+          $('#kecamatan').empty();
+          $('#kecamatan').append('<option value="0" disable="true" selected="true">=== Pilih Kecamatan ===</option>');
+
+          $.each(data, function(index, kecamatanObj){
+            $('#kecamatan').append('<option value="'+ kecamatanObj.id +'">'+ kecamatanObj.name +'</option>');
+          })
+        });
+      });
+  </script>
+  @endsection

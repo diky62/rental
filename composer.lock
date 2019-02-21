@@ -639,6 +639,18 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
+            "version": "v5.7.25",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "f8fb354878064b94a3ff09a6ffd48ee9a8d712cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f8fb354878064b94a3ff09a6ffd48ee9a8d712cf",
+                "reference": "f8fb354878064b94a3ff09a6ffd48ee9a8d712cf",
+=======
             "version": "v5.7.26",
             "source": {
                 "type": "git",
@@ -649,6 +661,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/ca3bc9769969e8af3bd9878a3e0242051c74dae4",
                 "reference": "ca3bc9769969e8af3bd9878a3e0242051c74dae4",
+>>>>>>> b660811ec7163268d5f8a861d9877324bef1b443
                 "shasum": ""
             },
             "require": {
@@ -781,7 +794,11 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
+            "time": "2019-02-05T14:28:43+00:00"
+=======
             "time": "2019-02-12T14:52:21+00:00"
+>>>>>>> b660811ec7163268d5f8a861d9877324bef1b443
         },
         {
             "name": "laravel/nexmo-notification-channel",
@@ -1020,26 +1037,26 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.50",
+            "version": "1.0.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "dab4e7624efa543a943be978008f439c333f2249"
+                "reference": "f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/dab4e7624efa543a943be978008f439c333f2249",
-                "reference": "dab4e7624efa543a943be978008f439c333f2249",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
+                "reference": "f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
                 "shasum": ""
             },
             "require": {
-                "ext-fileinfo": "*",
                 "php": ">=5.5.9"
             },
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
             },
             "require-dev": {
+                "ext-fileinfo": "*",
                 "phpspec/phpspec": "^3.4",
                 "phpunit/phpunit": "^5.7.10"
             },
@@ -1100,7 +1117,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2019-02-01T08:50:36+00:00"
+            "time": "2018-08-22T07:45:22+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -4196,6 +4213,18 @@
         },
         {
             "name": "phpunit/phpunit",
+<<<<<<< HEAD
+            "version": "7.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "2896657da5fb237bc316bdfc18c2650efeee0dc0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2896657da5fb237bc316bdfc18c2650efeee0dc0",
+                "reference": "2896657da5fb237bc316bdfc18c2650efeee0dc0",
+=======
             "version": "7.5.5",
             "source": {
                 "type": "git",
@@ -4206,6 +4235,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/23a200a60552cb9ba483a8d1e106c70fb0be0bb9",
                 "reference": "23a200a60552cb9ba483a8d1e106c70fb0be0bb9",
+>>>>>>> b660811ec7163268d5f8a861d9877324bef1b443
                 "shasum": ""
             },
             "require": {
@@ -4276,7 +4306,11 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
+            "time": "2019-02-07T14:15:04+00:00"
+=======
             "time": "2019-02-15T14:00:34+00:00"
+>>>>>>> b660811ec7163268d5f8a861d9877324bef1b443
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

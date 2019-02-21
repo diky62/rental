@@ -28,9 +28,9 @@ class StokMobilController extends Controller
   public function edit($id)
   {
     $page = 'Pages.Vendor.edit_stok_mobil';
-    $stok = Stok::all();
-    $data = Mobil::findOrFail($id);
-    return view($page)->with(compact('data', 'stok'));
+    $stok = Stok::findOrFail($id);
+    $data = Mobil::all();
+    return view($page)->with(compact('stok', 'data'));
   }
 
   public function update(Request $request, $id)

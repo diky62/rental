@@ -15,9 +15,6 @@ class UsersSeeder extends Seeder
       DB::table('users')->insert([
           'name' => 'Administrator',
           'nik' => 1234567,
-          'provinsi_id' => 32,
-          'kabupaten_id' => 3212,
-          'kecamatan_id' => 3212170,
           'alamat' => 'Bandung',
           'email' => 'admin@proyek.com',
           'roles_id' => 1,
@@ -28,9 +25,6 @@ class UsersSeeder extends Seeder
       DB::table('users')->insert([
           'name' => 'Vendor',
           'nik' => 1234567,
-          'provinsi_id' => 32,
-          'kabupaten_id' => 3212,
-          'kecamatan_id' => 3212170,
           'alamat' => 'Indramayu',
           'email' => 'vendor@proyek.com',
           'roles_id' => 2,
@@ -41,9 +35,6 @@ class UsersSeeder extends Seeder
       DB::table('users')->insert([
           'name' => 'User',
           'nik' => 1234567,
-          'provinsi_id' => 32,
-          'kabupaten_id' => 3212,
-          'kecamatan_id' => 3212170,
           'alamat' => 'Indramayu',
           'email' => 'user@proyek.com',
           'roles_id' => 3,
