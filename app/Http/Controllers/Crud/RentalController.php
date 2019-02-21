@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Crud;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Rental;
-use App\UsersMobile;
+use App\User;
 use App\Mobil;
 
 class RentalController extends Controller

@@ -85,7 +85,7 @@ class HomeUserController extends Controller
         $a = $request['tgl_pinjam'];
         $b = $request['tgl_kembali'];
         // dd($a);
-        $data['stok'] = Stok::with('mobil')->where('tanggal','=',$a)->where('status',0)->get();
+        $data['stok'] = Stok::with('mobil')->where('tanggal','=',$a)->where('status',1)->get();
         // dd($data);
         return view('user/home.show', $data, ['a' => $a, 'b' => $b]);
     }
