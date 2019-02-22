@@ -4,12 +4,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div aclass="card">
+            <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('daftar.store') }}" >
+                    <form method="POST" action="" aria-label="{{ __('Register') }}">
                         @csrf
+
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nama') }}</label>
 
@@ -37,45 +38,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="provinsi" class="col-md-4 col-form-label text-md-right">{{ __('Provinsi') }}
-                            </label>
-                            <div class="col-md-6">
-                                <select class="form-control" name="provinsi_id" id="provinsi_id">
-                                    <option value="0" disabled="true" selected="true">Pilih Provinsi</option>
-                                    @foreach($provinsi as $provinsi)
-                                    <option value="{{ $provinsi->id }}">{{ $provinsi->nama_provinsi }}</option>
-                                    @endforeach 
-                                </select>
-                            </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="kabupaten" class="col-md-4 col-form-label text-md-right">{{ __('Kabupaten') }}
-                            </label>
-                            <div class="col-md-6">
-                                <select class="form-control" name="kabupaten" id="kabupaten">
-                                    <option value="0" disabled="true" selected="true">Pilih Kabupaten</option>
-                                     @foreach($kabupaten as $kabupaten)
-                                    <option value="{{ $kabupaten->id }}">{{ $kabupaten->nama_kabupaten }}</option>
-                                    @endforeach 
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="kecamatan" class="col-md-4 col-form-label text-md-right">{{ __('Kecamatan') }}
-                            </label>
-
-                            <div class="col-md-6">
-                                <select class="form-control" name="kecamatan" id="kecamatan">
-                                    <option value="0" disabled="true" selected="true">Pilih Kecamatan</option>
-                                     @foreach($kecamatan as $kecamatan)
-                                    <option value="{{ $kecamatan->id }}">{{ $kecamatan->nama_kecamatan }}</option>
-                                    @endforeach 
-                                </select>
-                            </div>
-                        </div>
                 
                         <div class="form-group row">
                             <label for="alamat" class="col-md-4 col-form-label text-md-right">{{ __('Alamat') }}</label>
@@ -111,7 +74,7 @@
 
                             <div class="col-md-6">
                                 <select class="form-control" name="roles_id" id="roles_id">
-                                    <option>-- Pillih Hak Akses --</option>
+                                    <option value="">-- Pillih Hak Akses --</option>
                                     <option value="1">Admin</option>
                                     <option value="2">Vendor</option>
                                     <option value="3">User</option>
@@ -141,6 +104,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="no_hp" class="col-md-4 col-form-label text-md-right">{{ __('No Hp') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="no_hp" type="text" class="form-control{{ $errors->has('no_hp') ? ' is-invalid' : '' }}" name="no_hp" value="{{ old('no_hp') }}" required>
+
+                                @if ($errors->has('no_hp'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('no_hp') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -155,43 +132,3 @@
     </div>
 </div>
 @endsection
-
-@section('script')
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
-      $('#provinsi').on('change', function(e){
-        console.log(e);
-        var provinsi_id = e.target.value;
-        $.get('/json-kabupaten?provinsi_id=' + provinsi_id,function(data) {
-          console.log(data);
-          $('#kabupaten').empty();
-          $('#kabupaten').append('<option value="0" disabled="true" selected="true">Pilih Kabupaten</option>');
-
-          $('#kecamatan').empty();
-          $('#kecamatan').append('<option value="0" disabled="true" selected="true">Pilih Kecamatan</option>');
-
-          $.each(data, function(index, kabupatenObj){
-            $('#kabupaten').append('<option value="'+ kabupatenObj.id +'">'+ kabupatenObj.name +'</option>');
-          })
-        });
-      });
-
-      $('#kabupaten').on('change', function(e){
-        console.log(e);
-        var kabupaten_id = e.target.value;
-        $.get('/json-kecamatan?kabupaten_id=' + kabupaten_id,function(data) {
-          console.log(data);
-          $('#kecamatan').empty();
-          $('#kecamatan').append('<option value="0" disable="true" selected="true">=== Pilih Kecamatan ===</option>');
-
-          $.each(data, function(index, kecamatanObj){
-            $('#kecamatan').append('<option value="'+ kecamatanObj.id +'">'+ kecamatanObj.name +'</option>');
-          })
-        });
-      });
-  </script>
-  @endsection
