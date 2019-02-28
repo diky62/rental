@@ -4,20 +4,21 @@ namespace App\Http\Controllers\Crud;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\UsersMobile;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class UserMobileController extends Controller
 {
   public function index()
   {
     $page = 'Pages.UserVendor.user_mobile';
-    $data = UsersMobile::all();
-    return view($page)->with(compact('data'));
+    $name["users"] = User::find(Auth::user()->id);
+    return view($page)->with(compact('data', 'name'));
   }
 
   public function destroy($id)
   {
-    $data = UsersMobile::findOrFail($id);
+    $data = User::findOrFail($id);
     $data->delete();
     return redirect()->route('user.mobile')->with('alert-success','Data berhasi dihapus!');
   }

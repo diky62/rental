@@ -17,9 +17,6 @@
                   <th>Aksi</th>
                   <th>Nama</th>
                   <th>NIK</th>
-                  <th>Provinsi</th>
-                  <th>Kabupaten</th>
-                  <th>Kecamatan</th>
                   <th>Alamat</th>
                   <th>Email</th>
                   <th>Level</th>
@@ -38,9 +35,6 @@
                             </td>
                             <td>{{$users->name}}</td>
                             <td>{{$users->nik}}</td>
-                            <td>{{$users->Provinsi->nama_provinsi}}</td>
-                            <td>{{$users->Kabupaten->nama_kabupaten}}</td>
-                            <td>{{$users->Kecamatan->nama_kecamatan}}</td>
                             <td>{{$users->alamat}}</td>
                             <td>{{$users->email}}</td>
                             <td>{{$users->Roles->level}}</td>
