@@ -6,20 +6,17 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Roles;
+use App\Provinsi;
+use App\Kabupaten;
+use App\Kecamatan;
 
 class UserMobileController extends Controller
 {
   public function index()
   {
     $page = 'Pages.UserVendor.user_mobile';
-    $name["users"] = User::find(Auth::user()->id);
-    return view($page)->with(compact('data', 'name'));
-  }
-
-  public function destroy($id)
-  {
-    $data = User::findOrFail($id);
-    $data->delete();
-    return redirect()->route('user.mobile')->with('alert-success','Data berhasi dihapus!');
+    $user = User::where('roles_id',3)->get();
+    return view($page)->with(compact('user'));
   }
 }
