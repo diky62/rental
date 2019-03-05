@@ -131,6 +131,9 @@ Route::group(['middleware'=>'role:2'],function(){
         Route::get('stok_mobil/edit_stok_mobil/{id}', 'StokMobilController@edit')->name('stok_mobil.edit');
         Route::post('stok_mobil/edit_stok_mobil/{id}', 'StokMobilController@update')->name('stok_mobil.update');
         Route::post('stok_mobil/status/{id}', 'StokMobilController@StokMobilStatus')->name('stok_mobil.status');
+
+        //notification
+        Route::get('readNotif','NotificationController@readNotif');
       });
     });
 

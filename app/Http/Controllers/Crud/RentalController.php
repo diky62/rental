@@ -14,7 +14,9 @@ class RentalController extends Controller
     {
     	$page = 'Pages.Report.index';
       $rental = Rental::all();
-      return view($page)->with(compact('rental'));
+      $name = User::all();
+      $mobil = Mobil::all();
+      return view($page)->with(compact('rental', 'name', 'mobil'));
     }
 
     public function rentalStatus(Request $request, $id){

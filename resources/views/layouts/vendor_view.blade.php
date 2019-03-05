@@ -76,6 +76,22 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+
+          <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-envelope fa-fw"></i> Notification <span class="badge" id="countNotif"></span> <i class="fa fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-messages" id="notification">
+                                    <li>
+                                        <a class='text-center' href='#' data-toggle='modal' data-target='#notifModal'>
+                                            <strong>Read All Activities</strong>
+                                            <i class='fa fa-angle-right'></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- /.dropdown-messages -->
+                            </li>
+
             <li class="nav-item">
               <a href="#" onclick="logout()" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
