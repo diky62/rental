@@ -28,6 +28,9 @@
                   <div class="col col-md-2"><label for="text-input" class="form-control-label">Tanggal</label></div>
                     <div class="col-12 col-md-10"><input type="date" id="tanggal" name="tanggal" placeholder="Tanggal" class="form-control"></div>
                 </div>
+                <div class="row form-group">
+                    <div class="col-12 col-md-10"><input type="hidden" id="status" name="status" value="0" class="form-control"></div>
+                </div>
             </div>
               <!-- /.box-body -->
               <div class="box-footer">

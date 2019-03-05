@@ -63,6 +63,7 @@ class StokMobilController extends Controller
          $data = new Stok();
          $data->mobil_id = $request->input('nama_mobil');
          $data->tanggal = $request->input('tanggal');
+         $data->status = $request->input('status');
          $data->save();
          return redirect()->route('stok.mobil')->with('alert-success','Data berhasil ditambahkan!');
          $data->reset();
