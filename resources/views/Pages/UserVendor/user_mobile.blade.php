@@ -14,30 +14,21 @@
                 <thead>
                 <tr>
                   <th>No</th>
-                  <th>Aksi</th>
                   <th>Nama</th>
                   <th>NIK</th>
                   <th>Alamat</th>
-                  <th>No Hp</th>
                   <th>Email</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                   @php $no = 1; @endphp
-                      @foreach($data as $datas)
+                      @foreach($user as $users)
                         <td>{{$no++}}</td>
-                        <td>
-                              <form action="{{ route('user.mobile.delete', $datas->id) }}" method="post" style="display: inline-block">
-                                {{ csrf_field() }}
-                              <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash-o"></i></button></a></center>
-                              </form>
-                            </td>
-                            <td>{{$datas->name}}</td>
-                            <td>{{$datas->nik}}</td>
-                            <td>{{$datas->alamat}}</td>
-                            <td>{{$datas->no_hp}}</td>
-                            <td>{{$datas->email}}</td>
+                            <td>{{$users->name}}</td>
+                            <td>{{$users->nik}}</td>
+                            <td>{{$users->alamat}}</td>
+                            <td>{{$users->email}}</td>
                         </form>
                         </td>
                 </tr>
