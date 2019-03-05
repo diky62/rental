@@ -41,7 +41,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware'=>'auth'],function(){
   Route::group(['middleware'=>'role:1'],function(){
-    Route::get('/home1','home1Controller@index')->name('home1');
+    Route::get('/home1','Home1Controller@index')->name('home1');
 
 Route::group(['namespace' => 'Auth'], function () {
 });
@@ -87,7 +87,7 @@ Route::group(['namespace' => 'Auth'], function () {
 });
 
 Route::group(['middleware'=>'role:2'],function(){
-  Route::get('/home2','home2Controller@index')->name('home2');
+  Route::get('/home2','Home2Controller@index')->name('home2');
   Route::get('dashboard_vendor','DashboardVendorController@index')->name('dashboard');
 
     Route::group(['namespace' => 'Crud'], function () {
