@@ -68,7 +68,7 @@ class HomeUserController extends Controller
           $data->status = $request->input('status');
           $data->save();
 
-            return redirect('/homeuser');
+            return redirect('success');
     }
 
     /**
@@ -81,6 +81,7 @@ class HomeUserController extends Controller
     {
         return view('user/home.succes');        
     }
+
 
     public function show(Request $request)
     {
@@ -125,7 +126,7 @@ class HomeUserController extends Controller
     {
         //
     }
-    public function success()
+    public function succes()
     {
         
       
