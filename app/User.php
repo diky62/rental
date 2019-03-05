@@ -40,4 +40,7 @@ class User extends Authenticatable
     public function kecamatan(){
         return $this->belongsTo("App\Kecamatan");
     }
+    public function rental(){
+       return $this->hasOne("App\Rental");
+   }
 }
