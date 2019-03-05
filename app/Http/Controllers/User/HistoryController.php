@@ -19,7 +19,7 @@ class HistoryController extends Controller
     public function index()
     {
          $data['rental'] = Rental::
-        with('user','mobil')->where('users_id',Auth::user()->id)->get();
+        with('users','mobil')->where('users_id',Auth::user()->id)->get();
         // dd($data);
         return view('user.history.index',$data);
     }
