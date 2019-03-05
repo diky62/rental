@@ -35,7 +35,13 @@
                   <i class="fa fa-paint-brush"></i> <label> {{ $rentals->mobil->warna }}</label>
                 </div>
                 <div class="col-xs-4">
-                  <i class="fa fa-info"></i> <label> {{ $rentals->status }}</label>
+                  <i class="fa fa-info"></i>
+                    @if ( $rentals->status == 0)
+                      <label>Terbayar</label>
+                    @else
+                      <label>Belum Terbayar</label>
+                    @endif
+                  {{-- <label> {{ $rentals->status }}</label> --}}
                 </div>
                 <div class="col-xs-4">
                   <i class="fa fa-info"></i> <label> {{ $rentals->mobil->vendor->nama_rental }}</label>

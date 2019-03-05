@@ -40,7 +40,9 @@ class HomeUserController extends Controller
         $interval = $datetime1->diff($datetime2);
         $lama = $interval->days;
         // dd($user);
-        $total=$harga*$lama;
+        $jumlah=$harga*$lama;
+        $random = rand(1,999);
+        $total = $jumlah+$random;
         // dd($total);
 
         $data['stok'] = Stok::with('mobil')->find($id);
