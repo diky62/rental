@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('check',function(){
   switch (Auth::user()->roles_id) {
     case '1':
-      return redirect('dashboar_admin?login=true');
+      return redirect('dashboard_admin?login=true');
       break;
     case '2':
       return redirect('dashboard?login=true');
