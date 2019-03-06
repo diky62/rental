@@ -11,7 +11,6 @@ use App\Mobil;
 use App\User;
 use App\Rental;
 
-
 class HomeUserController extends Controller
 {
     /**
@@ -32,6 +31,8 @@ class HomeUserController extends Controller
     public function create(Request $request, $id )
     {
         // $a = $request['tgl_pinjam'];
+        $mobil_id = $request['mobil_id'];
+        $mobil = $request['nama_mobil'];
         $a = $request['tgl_pinjam'];
         $b = $request['tgl_kembali'];
         $harga = $request['harga'];
@@ -39,15 +40,18 @@ class HomeUserController extends Controller
         $datetime2 = new DateTime("$a");
         $interval = $datetime1->diff($datetime2);
         $lama = $interval->days;
-        // dd($user);
+        // dd($mobil);
         $jumlah=$harga*$lama;
         $random = rand(1,999);
         $total = $jumlah+$random;
         // dd($total);
 
-        $data['stok'] = Stok::with('mobil')->find($id);
+        // $data['stok'] = Stok::with('mobil')->find($id);
         $data ['user'] = User::find(Auth::user()->id);
-        return view('user/home.rent',$data, ['a' => $a, 'b' => $b, 'interval' => $interval, 'total' => $total]);
+
+        
+
+        return view('user/home.rent',$data, ['mobil_id' => $mobil_id, 'mobil' => $mobil,'a' => $a, 'b' => $b, 'interval' => $interval, 'total' => $total]);
     }
 
     /**
@@ -58,6 +62,9 @@ class HomeUserController extends Controller
      */
     public function store(Request $request)
     {
+        $a = $request['tgl_pinjam'];
+        $b = $request['tgl_kembali'];
+
          $data = new Rental();
           $data->users_id = $request->input('user_id');
           $data->mobil_id = $request->input('mobil_id');
@@ -67,6 +74,12 @@ class HomeUserController extends Controller
           $data->harga_sewa = $request->input('total');
           $data->status = $request->input('status');
           $data->save();
+
+          $data["stok"]=Stok::whereBetween('tanggal',[$a, $b])
+        ->update([
+            'status' => 0,
+                        
+        ]);
 
             return redirect('success');
     }
@@ -85,12 +98,14 @@ class HomeUserController extends Controller
 
     public function show(Request $request)
     {
+        $mobil_id = $request['mobil_id'];
+        $mobil = $request['nama_mobil'];
         $a = $request['tgl_pinjam'];
         $b = $request['tgl_kembali'];
         // dd($a);
         $data['stok'] = Stok::with('mobil')->where('tanggal','=',$a)->where('status',1)->get();
         // dd($data);
-        return view('user/home.show', $data, ['a' => $a, 'b' => $b]);
+        return view('user/home.show', $data, ['mobil_id' => $mobil_id, 'mobil' => $mobil,'a' => $a, 'b' => $b]);
     }
 
     /**

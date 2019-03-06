@@ -56,7 +56,7 @@
     <form method='post' action="{{ route('/homeuser.show') }}">
             @csrf
       <div class="row form-group">
-        <div class="col col-md-2"><label for="text-input" class="form-control-label">Tanggal Pinjam</label></div>
+         <div class="col col-md-2"><label for="text-input" class="form-control-label">Tanggal Pinjam</label></div>
           <div class="col-12 col-md-9">
             <input type="date" id="tgl_pinjam" name="tgl_pinjam"" class="form-control">
           </div>

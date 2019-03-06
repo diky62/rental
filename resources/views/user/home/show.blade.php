@@ -14,6 +14,8 @@
                 <div class="form-group">
                   <p align="center"> 
                     <h3>{{ $stoks->mobil->nama_mobil }}</h3>
+                     <input type="hidden" class="form-control col-12 col-md-9" value="{{$stoks->mobil->id}}" readonly="true" name="mobil_id" value="" placeholder="type something" required>
+                     <input type="hidden" class="form-control col-12 col-md-9" value="{{$stoks->mobil->nama_mobil}}" readonly="true" name="nama_mobil" value="" placeholder="type something" required>  
                   </p>
                   <p align="center"> 
                     <img src="{{ asset('uploads/gambar/'.$stoks->mobil->gambar) }}" width="300">

@@ -17,8 +17,8 @@
               <div class="form-group">
                 <label>Nama Mobil </label>
                 <input type="hidden" class="form-control col-12 col-md-9" value="{{$user->id}}" readonly="true" name="user_id" value="" placeholder="type something" required>
-                <input type="hidden" class="form-control col-12 col-md-9" value="{{$stok->mobil->id}}" readonly="true" name="mobil_id" value="" placeholder="type something" required> 
-                <input type="text" class="form-control col-12 col-md-9" value="{{$stok->mobil->nama_mobil}}" readonly="true" name="nama_mobil" value="" placeholder="type something" required> 
+                <input type="hidden" class="form-control col-12 col-md-9" value="{{$mobil_id}}" readonly="true" name="mobil_id" value="" placeholder="type something" required> 
+                <input type="text" class="form-control col-12 col-md-9" value="{{$mobil}}" readonly="true" name="nama_mobil" value="" placeholder="type something" required> 
               </div> 
               <div class="form-group">
                 <label>Tanggal Pinjam </label>

@@ -29,7 +29,7 @@
                             <label for="nik" class="col-md-4 col-form-label text-md-right">{{ __('NIK') }}</label>
 
                             <div class="col-md-6">
-                                <input id="nik" type="text" class="form-control{{ $errors->has('nik') ? ' is-invalid' : '' }}" name="nik" value="{{ old('nik') }}" required autofocus>
+                                <input id="nik" type="text" class="form-control{{ $errors->has('nik') ? ' is-invalid' : '' }}" name="nik" value="{{ old('nik') }}" required autofocus onkeypress="return hanyaAngka(event)">
 
                                 @if ($errors->has('nik'))
                                     <span class="invalid-feedback" role="alert">
@@ -108,7 +108,7 @@
                             <label for="no_hp" class="col-md-4 col-form-label text-md-right">{{ __('No Hp') }}</label>
 
                             <div class="col-md-6">
-                                <input id="no_hp" type="text" class="form-control{{ $errors->has('no_hp') ? ' is-invalid' : '' }}" name="no_hp" value="{{ old('no_hp') }}" required>
+                                <input id="no_hp" type="text" class="form-control{{ $errors->has('no_hp') ? ' is-invalid' : '' }}" name="no_hp" onkeypress="return hanyaAngka(event)" value="{{ old('no_hp') }}" required>
 
                                 @if ($errors->has('no_hp'))
                                     <span class="invalid-feedback" role="alert">
