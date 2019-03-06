@@ -32,6 +32,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
+				<a href="{{route('login')}}"><button type="button" class="btn btn-success fa fa-arrow-left"> Back</button></a>
 				<form class="login100-form validate-form" method="POST" action="{{route('register') }}">
 					{{ csrf_field() }}
 					
