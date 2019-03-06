@@ -41,7 +41,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware'=>'auth'],function(){
   Route::group(['middleware'=>'role:1'],function(){
-    Route::get('dashboard_admin','crud\DashboardAdminController@index')->name('dashboard_admin');
+    Route::get('dashboard_admin','DashboardAdminController@index')->name('dashboard_admin');
     Route::get('/home1','Home1Controller@index')->name('home1');
 
 Route::group(['namespace' => 'Auth'], function () {
