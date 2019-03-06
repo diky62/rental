@@ -77,18 +77,6 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
 
-          <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fa fa-envelope fa-fw"></i> Notification <span class="badge" id="countNotif"></span> <i class="fa fa-caret-down"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-messages" id="notification">
-                                    <li>
-                                        <a class='text-center' href='#' data-toggle='modal' data-target='#notifModal'>
-                                            <strong>Read All Activities</strong>
-                                            <i class='fa fa-angle-right'></i>
-                                        </a>
-                                    </li>
-                                </ul>
                                 <!-- /.dropdown-messages -->
                             </li>
 
@@ -116,12 +104,9 @@
 
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header" >MAIN MENU</li>
-        <li class="treeview">
-          <a href="{{ route('dashboard') }}">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            <span class="pull-right-container">
-            </span>
+        <li>
+          <a href="{{url('/dashboard')}}">
+            <i class="fa fa-home"></i> <span>Dashboard</span>
           </a>
         </li>
 
@@ -173,104 +158,6 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <div id="content-wrapper">
-        <script type="text/javascript">
-        (function($){
-          $(function(){
-            $('.button-collapse').sideNav();
-          });
-        })(jQuery);
-
-        </script>
-            <div class="container-fluid">
-                <!-- Breadcrumbs-->
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item">
-                    <a href="#">Dashboard</a>
-                  </li>
-                </ol>
-        <div class="row">
-          <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3>1</h3>
-              <p>Data Pelanggan</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="{{ route('user.mobile') }}" class="small-box-footer">
-              More info <i class="fa fa-arrow-circle-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>1</h3>
-              <p>Data Vendor</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="{{ route('vendor.index1') }}" class="small-box-footer">
-              More info <i class="fa fa-arrow-circle-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>1</h3>
-              <p>Data Mobil</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-files-o"></i>
-            </div>
-            <a href="{{ route('mobil.index') }}" class="small-box-footer">
-              More info <i class="fa fa-arrow-circle-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-purple">
-            <div class="inner">
-              <h3>1</h3>
-              <p>Stok Mobil</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-calendar"></i>
-            </div>
-            <a href="{{ route('stok.mobil') }}" class="small-box-footer">
-              More info <i class="fa fa-arrow-circle-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-blue">
-            <div class="inner">
-              <h3>1</h3>
-              <p>Data Rental</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-shopping-cart"></i>
-            </div>
-            <a href="{{ route('rental.index') }}" class="small-box-footer">
-              More info <i class="fa fa-arrow-circle-right"></i>
-            </a>
-          </div>
-        </div>
-
 
     </section>
 

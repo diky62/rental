@@ -21,10 +21,10 @@ Route::get('check',function(){
       return redirect('/home1?login=true');
       break;
     case '2':
-      return redirect('/home2?login=true');
+      return redirect('dashboard?login=true');
       break;
     case '3':
-      return redirect('/homeuser?login=true');
+      return redirect('dashboard_admin?login=true');
       break;
 
     default:
@@ -41,6 +41,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware'=>'auth'],function(){
   Route::group(['middleware'=>'role:1'],function(){
+    Route::get('dashboard_admin','DashboardAdminController@index')->name('dashboard_admin');
     Route::get('/home1','Home1Controller@index')->name('home1');
 
 Route::group(['namespace' => 'Auth'], function () {
@@ -87,11 +88,12 @@ Route::group(['namespace' => 'Auth'], function () {
 });
 
 Route::group(['middleware'=>'role:2'],function(){
+  Route::get('dashboard','DashboardVendorController@index')->name('dashboard');
   Route::get('/home2','Home2Controller@index')->name('home2');
   Route::get('dashboard_vendor','DashboardVendorController@index')->name('dashboard');
 
     Route::group(['namespace' => 'Crud'], function () {
-      Route::get('dashboard_vendor','DashboardVendorController@index')->name('dashboard');
+      Route::get('dashboard','DashboardVendorController@index')->name('dashboard');
 
         //MOBIL
         Route::get('mobil', 'MobilController@index')->name('mobil.index');
