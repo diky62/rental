@@ -38,9 +38,9 @@
                         <td><form action="{{route('stok_mobil.status', $stoks->id)}}" method="post">
                             {{csrf_field()}}
                           @if ($stoks->status == 0)
-                            <button type="link" onClick="return confirm('mobil belum diaktifkan?');" value="0" class="btn btn-primary btn-sm">Tersedia</i></button>
+                            <button type="link" onClick="return confirm('mobil tidak tersedia?');" value="0" class="btn btn-primary btn-sm">Tersedia</i></button>
                           @else
-                            <button type="link" onClick="return confirm('mobil sudah diaktifkan?');" value="1" class="btn btn-success btn-sm">Tidak Tersedia</i></button>
+                            <button type="link" onClick="return confirm('mobil tersedia?');" value="1" class="btn btn-success btn-sm">Tidak Tersedia</i></button>
                           @endif
                         </form>
                         </td>
