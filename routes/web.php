@@ -18,13 +18,13 @@ Route::get('/', function () {
 Route::get('check',function(){
   switch (Auth::user()->roles_id) {
     case '1':
-      return redirect('/home1?login=true');
+      return redirect('dashboar_admin?login=true');
       break;
     case '2':
       return redirect('dashboard?login=true');
       break;
     case '3':
-      return redirect('dashboard_admin?login=true');
+      return redirect('/homeuser?login=true');
       break;
 
     default:
