@@ -45,6 +45,8 @@
 						
 					</span>
 
+					
+
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter Email">
 						<input class="input100" type="email" name="email">
 						<span class="focus-input100" data-placeholder="email"></span>
