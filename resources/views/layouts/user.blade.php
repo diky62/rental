@@ -327,9 +327,10 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="{{asset ('bower_components/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{asset ('jQuery-Mask/dist/jquery.mask.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="{{asset ('bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
@@ -365,6 +366,11 @@
 <style>.carousel-inner > .item > img,.carousel-inner > .item > a > img { width: 80%; margin: auto;}</style>
 <!-- AdminLTE App -->
 <script src="{{asset ('dist/js/adminlte.min.js') }}"></script>
+
+<!-- Uang -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/1ef022ab/dist/jquery.mask.min.js"></script>
+
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset ('dist/js/pages/dashboard.js') }}"></script>
 <script type="text/javascript">
@@ -385,6 +391,16 @@
       }
 
     </script>
+
+    <script type="text/javascript">
+            $(document).ready(function(){
+
+                // Format mata uang.
+                $( '.uang' ).mask('0.000.000.000', {reverse: true});
+
+            })
+        </script>
+
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset ('dist/js/demo.js') }}"></script>
  @yield('script')

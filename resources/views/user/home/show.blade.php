@@ -21,7 +21,7 @@
                     <img src="{{ asset('uploads/gambar/'.$stoks->mobil->gambar) }}" width="300">
                   </p>
                   <p align="center"> 
-                    <label>Rp.{{ $stoks->mobil->harga }} /Hari</label>
+                    <label>Rp.</label> <label class="uang">{{ $stoks->mobil->harga }} /Hari</label>
                     <input type="hidden" id="harga" name="harga" class="form-control" style="border: none;" value="{{ $stoks->mobil->harga }}">
                   </p>
                   <div class="col-xs-4">

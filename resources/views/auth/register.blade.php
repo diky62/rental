@@ -29,7 +29,7 @@
                             <label for="nik" class="col-md-4 col-form-label text-md-right">{{ __('NIK') }}</label>
 
                             <div class="col-md-6">
-                                <input id="nik" type="text" class="form-control{{ $errors->has('nik') ? ' is-invalid' : '' }}" name="nik" value="{{ old('nik') }}" required autofocus onkeypress="return hanyaAngka(event)">
+                                <input id="nik" type="text" maxlength="16" class="form-control{{ $errors->has('nik') ? ' is-invalid' : '' }}" name="nik" value="{{ old('nik') }}" required autofocus onkeypress="return hanyaAngka(event)">
 
                                 @if ($errors->has('nik'))
                                     <span class="invalid-feedback" role="alert">
@@ -73,11 +73,17 @@
                             </label>
 
                             <div class="col-md-6">
-                                <select class="form-control" name="roles_id" id="roles_id">
+                                <select class="form-control{{ $errors->has('roles_id') ? ' is-invalid' : '' }}" name="roles_id" id="roles_id">
+                                    
                                     <option value="">-- Pillih Hak Akses --</option>
                                     <option value="1">Admin</option>
                                     <option value="2">Vendor</option>
                                     <option value="3">User</option>
+                                    @if ($errors->has('roles_id'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('roles_id') }}</strong>
+                                    </span>
+                                @endif
                                 </select>
                             </div>
                         </div>
@@ -108,7 +114,7 @@
                             <label for="no_hp" class="col-md-4 col-form-label text-md-right">{{ __('No Hp') }}</label>
 
                             <div class="col-md-6">
-                                <input id="no_hp" type="text" class="form-control{{ $errors->has('no_hp') ? ' is-invalid' : '' }}" name="no_hp" onkeypress="return hanyaAngka(event)" value="{{ old('no_hp') }}" required>
+                                <input id="no_hp" type="text"  maxlength="13" class="form-control{{ $errors->has('no_hp') ? ' is-invalid' : '' }}" name="no_hp" onkeypress="return hanyaAngka(event)" value="{{ old('no_hp') }}" required>
 
                                 @if ($errors->has('no_hp'))
                                     <span class="invalid-feedback" role="alert">

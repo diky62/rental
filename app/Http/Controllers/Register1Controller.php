@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\User;
 use App\Roles;
-use App\Provinsi;
-use App\Kabupaten;
-use App\Kecamatan;
 
 class Register1Controller extends Controller
 {
@@ -23,11 +20,9 @@ class Register1Controller extends Controller
      */
     public function index()
     {
-        $data["provinsi"] = Provinsi::get();
-        $data["kabupaten"] = Kabupaten::get();
-        $data["kecamatan"] = Kecamatan::get();
-        $data["roles"] = Roles::get();
-        return view('auth.register',$data);
+        
+        // $data["roles"] = Roles::get();
+        return view('auth.register');
     }
       
         
@@ -73,11 +68,9 @@ class Register1Controller extends Controller
         $data['user']=User::create([
             'name' => $request['name'],
             'nik' => $request['nik'],
-            'provinsi_id' => $request['provinsi_id'],
-            'kabupaten_id' => $request['kabupaten_id'],
-            'kecamatan_id' => $request['kecamatan_id'],
             'alamat'=> $request['alamat'],
             'email' => $request['email'],
+            'no_hp'=> $request['no_hp'],
             'roles_id'=> $request['roles_id'],
             'password' => bcrypt($request['password'])
             

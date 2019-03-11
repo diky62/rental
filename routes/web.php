@@ -15,6 +15,9 @@ Route::get('/', function () {
   return view('auth/login');
 });
 
+Route::get('daftar', 'Register1Controller@index')->name('daftar');
+
+
 Route::get('check',function(){
   switch (Auth::user()->roles_id) {
     case '1':
@@ -33,6 +36,7 @@ Route::get('check',function(){
   }
 });
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -48,8 +52,8 @@ Route::group(['namespace' => 'Auth'], function () {
 });
 
         Route::get('/home', 'HomeController@index')->name('home');
-        Route::get('daftar','Register1Controller@index')->name('daftar');
-        Route::get('daftar','Register1Controller@store')->name('daftar');
+        // Route::get('daftar','Register1Controller@index')->name('daftar');
+        // Route::get('daftar','Register1Controller@store')->name('daftar');
 
 
         Route::resources([

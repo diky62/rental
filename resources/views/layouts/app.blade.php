@@ -77,6 +77,8 @@
             @yield('content')
         </main>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.all.js"></script>
+    
     <script type="text/javascript">
         function hanyaAngka(evt) {
             var charCode = (evt.which) ? evt.which : event.keyCode

@@ -38,7 +38,10 @@
               </div> --}}
               <div class="form-group">
                 <label>Total (Rp.)</label>
-                  <input type="text" class="form-control col-12 col-md-9" value="{{ $total }}" readonly="true" name="total" placeholder="type something" required> 
+                  <input type="text" class="form-control col-12 col-md-9 uang" value="{{ $total }}" readonly="true" name="total1" placeholder="type something" required> 
+              </div>
+              <div class="form-group">
+                  <input type="hidden" class="form-control col-12 col-md-9" value="{{ $total }}" readonly="true" name="total" placeholder="type something" required> 
               </div>
               <div class="form-group">
                   <input type="hidden" class="form-control col-12 col-md-9" value="1" readonly="true" name="status" placeholder="type something" required> 
